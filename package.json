@@ -1,0 +1,27 @@
+{
+  "name": "docs",
+  "version": "0.0.1",
+  "description": "Tidepool technical documentation that doesn't belong in a specific app/library/service repo.",
+  "main": "SUMMARY.md",
+  "scripts": {
+    "build-docs": "./update-gh-pages.sh",
+    "serve-docs": "./node_modules/.bin/gitbook serve",
+    "start": "./node_modules/.bin/gitbook serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tidepool-org/docs.git"
+  },
+  "keywords": [
+    "documentation"
+  ],
+  "author": "Jana Beck",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tidepool-org/docs/issues"
+  },
+  "homepage": "https://github.com/tidepool-org/docs",
+  "devDependencies": {
+    "gitbook-cli": "^1.0.1"
+  }
+}

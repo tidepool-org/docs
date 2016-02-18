@@ -10,7 +10,7 @@ echo ""
 echo "### Syncing docs static webiste to web/ directory... ###"
 echo ""
 
-rsync -rv --delete-before --exclude '.git/' _book/ web/
+rsync -rv --delete-before --exclude '.git/' --exclude '.nojekyll' _book/ web/
 
 echo ""
 echo "### Cleaning up GitBook build... ###"

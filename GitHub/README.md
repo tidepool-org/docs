@@ -30,6 +30,12 @@ Note that the following things, which may *seem* insignificant, are subject to c
 
 Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub's interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., **WIP. Don't merge!** If you open a WIP pull request, please remember to *remove* the WIP warning language When the PR *is* ready for review and merge.
 
+#### Continuous Integration
+
+In the vast majority of our app, service, and library repositories, if not all of them, we use the [Travis](https://travis-ci.org/ 'Travis CI') continuous integration service, integrated with GitHub, to run linting and tests on every push and pull request. When you open a pull request, if Travis reports a failure, your first task will be to fix whatever caused it to fail (linting, tests, or both). Anyone you've asked to review a PR may decline to do so until Travis is happy. Conversely, if someone has asked you to review a PR and Travis is in a sad/angry/&c state, you may decline to begin reviewing until whatever Travis is choking on has been fixed.
+
+You should also wait for Travis to report back happily on a tag push before deploying the tag. (Exception: it's a known non-RC, tagged as such, and only being deployed to the dev environment.)
+
 #### Merging
 
 Our conventions for merging pull requests vary - that is, whether the code reviewer does it, or whether the code reviewer signs off and then waits for the PR opener to do it. The strategy employed in any given situation depends on how many things are in flight in the repository, the priority of sprint goals for production releases, etc. Communicate clearly with your teammates about who's going to merge and when.

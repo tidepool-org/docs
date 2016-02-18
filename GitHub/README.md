@@ -6,11 +6,11 @@ This document describes our guidelines for `git` and GitHub usage.
 
 ### Branches and pull requests
 
-In all application and library repositories, we use the `master` branch for production code. Production _releases_ are tied to git [tags](#tags).
+In all application and library repositories, we use the `master` branch for production code. Production _releases_ are tied to git [tags](#tags). (In our ops system, it is only possible to build and deploy an app or service from a tag.)
 
-When making a change in any repository (whether developing a new feature or fixing a bug), our convention is to create a new branch with the name `<GitHub username>/<short description>` - e.g., `jebeck/new-signup-flow` or `jebeck/bugfix-form-validation`. The backend team sometimes/always(?) uses sprint-based branch names - e.g., `darinkrauss/sprint25` or `darinkrauss/sprint25-clinic-roles`.
+When making a change in any repository (whether developing a new feature or fixing a bug), our convention is to create a new branch with the name `<GitHub username>/<short description>` - e.g., `jebeck/new-signup-flow` or `jebeck/bugfix-form-validation`. The backend team occasionally uses sprint-based branch names - e.g., `jh-bate/sprint25` or `jh-bate/sprint25-clinic-roles`.
 
-All significant changes should be made through a pull request that is approved by another Tidepool developer through a process of code review. We often use LGTM "looks good to me" as our approval sign-off at the conclusion of a review and/or one or more rounds of feedback and changes.
+All significant changes should be made through a pull request that is approved by another Tidepool developer through a process of code review. We often use LGTM "looks good to me" as our approval sign-off at the conclusion of a review and/or one or more rounds of feedback and changes. One of the following (or any similarly unambiguous) emoji is also acceptable as sign-off: 🚢, 👍, or the GitHub ["ship it squirrel"](https://www.quora.com/GitHub/What-is-the-significance-of-the-Ship-It-squirrel 'Quora: Ship It Squirrel') (available with `:shipit:` but sadly a custom, not Unicode, emoji that cannot be pasted into this doc for demonstration).
 
 What constitutes a *significant* change? In essence, it's anything that could potentially affect the user experience (though perhaps indirectly). It's probably easier, however, to just list the few things that are *not* significant changes:
 
@@ -18,7 +18,9 @@ What constitutes a *significant* change? In essence, it's anything that could po
 - changes to dev-only tooling (dev tools like the dev server for client-side apps, test runners, CI configuration)
 - changes to the README or documentation
 
-Only changes such as these that are *not* significant may be pushed to master, and even then you may see some of us opening pull requests for such changes if we either wish to expose the changes to our peers for comment or just to prevent potential conflicts on master if a lot of things are currently in flight. Basically: when in doubt, open a pull request!
+Changes such as these that are *not* significant should still be made through a pull request, but the developer opening the pull request may merge the PR without code review and sign-off. Opening a pull request in these cases serves to make other developers aware of the changes made. The developer opening the pull request may also wish to leave the pull request open for a small amount of time for potential commenting and/or requests for changes. Our convention is to @-mention any other developers we would like to notify of the changes and give a period of time that the pull request will be open for comment before merge. For example:
+
+> @gniezen, does this look OK to you? Merging in twenty-four hours if no comment 😎
 
 Note that the following things, which may *seem* insignificant, are subject to code review (and QA):
 
@@ -26,11 +28,19 @@ Note that the following things, which may *seem* insignificant, are subject to c
 - changes to production build tooling
 - changes to the production static server (for client apps like blip)
 
+Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub's interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., **WIP. Don't merge!** If you open a WIP pull request, please remember to *remove* the WIP warning language When the PR *is* ready for review and merge.
+
+#### Merging
+
+Our conventions for merging pull requests vary - that is, whether the code reviewer does it, or whether the code reviewer signs off and then waits for the PR opener to do it. The strategy employed in any given situation depends on how many things are in flight in the repository, the priority of sprint goals for production releases, etc. Communicate clearly with your teammates about who's going to merge and when.
+
+After a pull request is merged, the branch should be deleted. (We also periodically clean up stale branches in each repository, and it is here that the developer-based branch naming convention is particularly helpful because it ensures that everyone knows who to ask about whether a stale branch needs to be kept or can be deleted.)
+
 ### Rebasing
 
-We follow the general guideline of "don't rewrite history." Rebasing to reorder, squash, or otherwise fix commits locally before a branch or a set of commits has been pushed upstream is perfectly acceptable, but once commits are upstream you shouldn't mess with them (by rebasing or, really, by any other means).
+We follow the general guideline of "don't rewrite history." Rebasing to reorder, squash, or otherwise fix commits locally before a branch or a set of commits has been pushed upstream is perfectly acceptable, but once commits are upstream you shouldn't mess with them (by rebasing or by any other means).
 
-The one exception to this is large, long-running feature branches. If you feel a need to clean up a large, long-running branch, the polite thing to do is to ask the other developer(s) you are collaborating with most closely on the work and/or the developer(s) who will be expected to review the code if they mind if you rebase and force push upstream. But again, this is the exception, not the rule.
+If you have a strong need to rebase a branch that has already been pushed upstream, a good strategy is to create a new branch with a "version number" increment. For example, from `darinkrauss/custodial-accounts` create `darinkrauss/custodial-accounts.2`, rebase as necessary *before* pushing `darinkrauss/custodial-accounts.2` upstream, then delete `darinkrauss/custodial-accounts` from the upstream repo.
 
 ### Tags
 
@@ -41,4 +51,6 @@ We "cut" tags in two situations, the first far more common than the second:
 
 In the first situation, we create the tag after merging the pull request(s) for the new feature(s) or fix(es) to master. In the second situation, we create the tag on the working feature branch. We use [semantic versioning](http://semver.org/ 'semver.org') for the first type of tag (the uploader is an exception, since the Chrome store does not support patch-level version increments), and most of us use the tool [mversion](https://github.com/mikaelbr/mversion 'mversion') to create these tags in a consistent way. You can bump the minor version for an uploader release, for example, with the command `mversion minor -m` and this will bump the version in *both* the `package.json` and the `manifest.json` (for the Chrome store), as well as commit those changes, named the commit with the new version number, and create the git tag. We typically distinguish the second type of tag from the first to make it very clear that the "demo" tag is not a release candidate, either by adding a post-fix (e.g., `v0.12.0-alpha`) or by using a named tag instead of a semver-based tag (e.g., `clinic-accts-beta`).
 
-We also - very rarely - deploy from a tag made on a "hotfix" branch. This happens when an urgent bugfix needs to made, but changes have already been merged into master that are not ready for release. In such situations, we branch off the previous actual production release tag (e.g., `v0.5.0`), fix the bug on the branch and tag *on the branch* (bumping the patch number from the previous release and adding a post-fix to identify the tag as a "hotfix" tag: `v0.5.1-hotfix`). After the hotfix release, we may choose to merge the bugfix branch into master, or we may reimplement or copy over the bugfix changes in another way, depending on how the bugfix fits (or doesn't) with the code on master.
+We also - very rarely - deploy from a tag made on a "hotfix" branch. This happens when an urgent bugfix needs to made, but changes have already been merged into master that are not ready for release. In such situations, we branch off the previous actual production release tag (e.g., `v0.5.0`), fix the bug on the branch and tag *on the branch* (bumping the patch number from the previous release and adding a post-fix to identify the tag as a "hotfix" tag: `v0.5.1-hotfix`). After the hotfix release, we may choose to merge the bugfix branch into master, or we may re-implement or copy over the bugfix changes in another way, depending on how the bugfix fits (or doesn't) with the code on master.
+
+When you cut a tag, you should fill out the release notes for the tag via GitHub's interface for this at `https://github.com/tidepool-org/[repo]/releases/new`. Look at prior releases for an idea of how verbose these usually are (not very). If the tag is not a release candidate, check the "This is a pre-release" box.

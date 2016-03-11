@@ -8,7 +8,7 @@
         <title>git and GitHub usage | docs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
-        <meta name="generator" content="GitBook 2.4.3">
+        <meta name="generator" content="GitBook 2.6.7">
         
         
         <meta name="HandheldFriendly" content="true"/>
@@ -21,7 +21,19 @@
     <link rel="stylesheet" href="../gitbook/style.css">
     
         
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-advanced-emoji/emoji-website.css">
+        
+    
+        
         <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
         
     
     
@@ -38,13 +50,16 @@
     <body>
         
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="Thu Feb 18 2016 11:44:13 GMT-0800 (PST)">
+    <div class="book"
+        data-level="1"
+        data-chapter-title="git and GitHub usage"
+        data-filepath="GitHub/README.md"
+        data-basepath=".."
+        data-revision="Fri Mar 11 2016 13:24:42 GMT-0800 (PST)"
+        data-innerlanguage="">
     
 
 <div class="book-summary">
-    <div class="book-search" role="search">
-        <input type="text" placeholder="Type to search" class="form-control" />
-    </div>
     <nav role="navigation">
         <ul class="summary">
             
@@ -102,80 +117,7 @@
         <div class="body-inner">
             <div class="book-header" role="navigation">
     <!-- Actions Left -->
-    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
-    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
     
-    <div id="font-settings-wrapper" class="dropdown pull-left">
-        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
-        </a>
-        <div class="dropdown-menu font-settings">
-    <div class="dropdown-caret">
-        <span class="caret-outer"></span>
-        <span class="caret-inner"></span>
-    </div>
-
-    <div class="buttons">
-        <button type="button" id="reduce-font-size" class="button size-2">A</button>
-        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
-    </div>
-
-    <div class="buttons font-family-list">
-        <button type="button" data-font="0" class="button">Serif</button>
-        <button type="button" data-font="1" class="button">Sans</button>
-    </div>
-
-    <div class="buttons color-theme-list">
-        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
-        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
-        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
-    </div>
-</div>
-
-    </div>
-
-    <!-- Actions Right -->
-    
-    <div class="dropdown pull-right">
-        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
-        </a>
-        <div class="dropdown-menu font-settings dropdown-left">
-            <div class="dropdown-caret">
-                <span class="caret-outer"></span>
-                <span class="caret-inner"></span>
-            </div>
-            <div class="buttons">
-                <button type="button" data-sharing="twitter" class="button">
-                    Share on Twitter
-                </button>
-                <button type="button" data-sharing="google-plus" class="button">
-                    Share on Google
-                </button>
-                <button type="button" data-sharing="facebook" class="button">
-                    Share on Facebook
-                </button>
-                <button type="button" data-sharing="weibo" class="button">
-                    Share on Weibo
-                </button>
-                <button type="button" data-sharing="instapaper" class="button">
-                    Share on Instapaper
-                </button>
-            </div>
-        </div>
-    </div>
-    
-
-    
-    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-    
-    
-    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
-    
-    
-    
-
 
     <!-- Title -->
     <h1>
@@ -190,13 +132,13 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="-git-and-github-usage-at-tidepool"><code>git</code> and GitHub usage at Tidepool</h2>
+                        <h2 id="git-and-github-usage-at-tidepool"><code>git</code> and GitHub usage at Tidepool</h2>
 <p>At Tidepool, we use <code>git</code> for version control, with repositories hosted <a href="https://github.com/tidepool-org/" title="Tidepool on GitHub" target="_blank">on GitHub</a>.</p>
 <p>This document describes our guidelines for <code>git</code> and GitHub usage.</p>
 <h3 id="branches-and-pull-requests">Branches and pull requests</h3>
 <p>In all application and library repositories, we use the <code>master</code> branch for production code. Production <em>releases</em> are tied to git <a href="#tags">tags</a>. (In our ops system, it is only possible to build and deploy an app or service from a tag.)</p>
 <p>When making a change in any repository (whether developing a new feature or fixing a bug), our convention is to create a new branch with the name <code>&lt;GitHub username&gt;/&lt;short description&gt;</code> - e.g., <code>jebeck/new-signup-flow</code> or <code>jebeck/bugfix-form-validation</code>. The backend team occasionally uses sprint-based branch names - e.g., <code>jh-bate/sprint25</code> or <code>jh-bate/sprint25-clinic-roles</code>.</p>
-<p>All significant changes should be made through a pull request that is approved by another Tidepool developer through a process of code review. We often use LGTM &quot;looks good to me&quot; as our approval sign-off at the conclusion of a review and/or one or more rounds of feedback and changes. One of the following (or any similarly unambiguous) emoji is also acceptable as sign-off: &#x1F6A2;, &#x1F44D;, or the GitHub <a href="https://www.quora.com/GitHub/What-is-the-significance-of-the-Ship-It-squirrel" title="Quora: Ship It Squirrel" target="_blank">&quot;ship it squirrel&quot;</a> (available with <code>:shipit:</code> but sadly a custom, not Unicode, emoji that cannot be pasted into this doc for demonstration).</p>
+<p>All significant changes should be made through a pull request that is approved by another Tidepool developer through a process of code review. We often use LGTM &quot;looks good to me&quot; as our approval sign-off at the conclusion of a review and/or one or more rounds of feedback and changes. One of the following (or any similarly unambiguous) emoji is also acceptable as sign-off: <img align="absmiddle" alt=":ship:" class="emoji" src="../gitbook/plugins/gitbook-plugin-advanced-emoji/emojis/ship.png" title=":ship:"> (<!-- ignore:advanced-emoji:start --><code>:ship:</code><!-- ignore:advanced-emoji:end -->), <img align="absmiddle" alt=":thumbsup:" class="emoji" src="../gitbook/plugins/gitbook-plugin-advanced-emoji/emojis/thumbsup.png" title=":thumbsup:"> (<!-- ignore:advanced-emoji:start --><code>:thumbsup:</code><!-- ignore:advanced-emoji:end -->), or the GitHub <a href="https://www.quora.com/GitHub/What-is-the-significance-of-the-Ship-It-squirrel" title="Quora: Ship It Squirrel" target="_blank">&quot;ship it squirrel&quot;</a> <img align="absmiddle" alt=":shipit:" class="emoji" src="../gitbook/plugins/gitbook-plugin-advanced-emoji/emojis/shipit.png" title=":shipit:"> (<!-- ignore:advanced-emoji:start --><code>:shipit:</code>,<code>:squirrel:</code><!-- ignore:advanced-emoji:end -->).</p>
 <p>What constitutes a <em>significant</em> change? In essence, it&apos;s anything that could potentially affect the user experience (though perhaps indirectly). It&apos;s probably easier, however, to just list the few things that are <em>not</em> significant changes:</p>
 <ul>
 <li>updates to dev-only dependencies</li>
@@ -251,9 +193,25 @@
         
 <script src="../gitbook/app.js"></script>
 
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
 <script>
 require(["gitbook"], function(gitbook) {
-    var config = {"fontSettings":{"theme":null,"family":"sans","size":2}};
+    var config = {"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
     gitbook.start(config);
 });
 </script>

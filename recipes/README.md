@@ -53,3 +53,48 @@ If you don't source a configuration file in blip, then when you use `npm start`,
 [^1]: Blip and the Chrome uploader both had a "mock" mode using a mock version of the API (wrapper) that returned mock data via the [blip-mock-data](https://github.com/tidepool-org/blip-mock-data 'Tidepool on GitHub: blip-mock-data') repo and package published to npm. Due to recent and upcoming changes to the Tidepool platform API(s), we have deprecated this mock data repository and removed the mock mode option from both blip and the Chrome uploader.
 
 [^2]: Obligatory "TP restart" GIF (kudos belong to @darinkrauss for bidirectionalizing the original): ![the `tp_restart` kitty](../images/tp_restart-kitty.gif)
+
+### Working with the Local Database
+
+Working with your local mongo database is pretty easy via [the mongo Shell](https://docs.mongodb.org/manual/reference/mongo-shell/ 'mongo Shell Quick Reference'), but here are a couple of very common recipes to get started.
+
+#### Deleting all local device data
+
+The only tricky part here is the fact that the database containing diabetes device data is called `streams` on localhost. From the mongo shell (accessible with the `mongo` command when you have the whole platform running locally):
+
+```mongo
+> use streams
+> db.deviceData.remove({});
+```
+
+To delete just a single user's data, also a common task, you can modify the object passed to `remove()` with the properties you want to match, such as `userid`.
+
+#### Completely wiping your local mongo
+
+If you ever want to start with a completely fresh mongo[^3], the following JavaScript, when saved as a local file, can be fed as the first argument to the `mongo` command while the whole platform is running in order to delete all Tidepool-generated databases.
+
+```mongo
+var mg = new Mongo();
+
+var ourDbs = [
+  'gate',
+  'hydrophone',
+  'local',
+  'messages',
+  'streams',
+  'user',
+  'oauth_test',
+  'test_ingestion',
+  'test_messages',
+  'test_streams',
+  'user_test'
+];
+
+for (var i = 0; i < ourDbs.length; ++i) {
+  var thisDb = ourDbs[i];
+  db = db.getSiblingDB(thisDb);
+  db.dropDatabase();
+}
+```
+
+[^3]: @jebeck's reason for doing this is typically because she's forgotten what uni- or bi-directional sharing relationships are set up among all her local accounts and would like to start fresh to test a specific configuration.

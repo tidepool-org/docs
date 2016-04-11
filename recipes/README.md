@@ -50,10 +50,6 @@ You can also modify one (or more) of the backend services locally to return an e
 
 If you don't source a configuration file in blip, then when you use `npm start`, blip will configure itself by default for the `dev` environment. You still access blip (with HMR) at [http://localhost:3000](http://localhost:3000), but you can log in with any account you've set up on the `dev` environment. Depending on what you're working on, this is *almost* as good of a developer experience as running everything locally (just a bit slower, of course), and it's a good idea to set up a set of accounts for yourself on `dev` containing sample diabetes data from various devices and various configurations of account ownership and sharing relationships.
 
-[^1]: Blip and the Chrome uploader both had a "mock" mode using a mock version of the API (wrapper) that returned mock data via the [blip-mock-data](https://github.com/tidepool-org/blip-mock-data 'Tidepool on GitHub: blip-mock-data') repo and package published to npm. Due to recent and upcoming changes to the Tidepool platform API(s), we have deprecated this mock data repository and removed the mock mode option from both blip and the Chrome uploader.
-
-[^2]: Obligatory "TP restart" GIF (kudos belong to @darinkrauss for bidirectionalizing the original): ![the `tp_restart` kitty](../images/tp_restart-kitty.gif)
-
 ### Working with the Local Database
 
 Working with your local mongo database is pretty easy via [the mongo Shell](https://docs.mongodb.org/manual/reference/mongo-shell/ 'mongo Shell Quick Reference'), but here are a couple of very common recipes to get started.
@@ -96,5 +92,9 @@ for (var i = 0; i < ourDbs.length; ++i) {
   db.dropDatabase();
 }
 ```
+
+[^1]: Blip and the Chrome uploader both had a "mock" mode using a mock version of the API (wrapper) that returned mock data via the [blip-mock-data](https://github.com/tidepool-org/blip-mock-data 'Tidepool on GitHub: blip-mock-data') repo and package published to npm. Due to recent and upcoming changes to the Tidepool platform API(s), we have deprecated this mock data repository and removed the mock mode option from both blip and the Chrome uploader.
+
+[^2]: Obligatory "TP restart" GIF (kudos belong to @darinkrauss for bidirectionalizing the original): ![the `tp_restart` kitty](../images/tp_restart-kitty.gif)
 
 [^3]: @jebeck's reason for doing this is typically because she's forgotten what uni- or bi-directional sharing relationships are set up among all her local accounts and would like to start fresh to test a specific configuration.

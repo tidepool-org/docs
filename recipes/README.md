@@ -50,16 +50,16 @@ You can also modify one (or more) of the backend services locally to return an e
 
 If you don't source a configuration file in blip, then when you use `npm start`, blip will configure itself by default for the `dev` environment. You still access blip (with HMR) at [http://localhost:3000](http://localhost:3000), but you can log in with any account you've set up on the `dev` environment. Depending on what you're working on, this is *almost* as good of a developer experience as running everything locally (just a bit slower, of course), and it's a good idea to set up a set of accounts for yourself on `dev` containing sample diabetes data from various devices and various configurations of account ownership and sharing relationships.
 
-### E: Verifying an email address without sending an email
+### E: Verifying an e-mail address without sending an e-mail
 
-If you're running locally and don't have the ability to send an email in order to
-get the link to verify an email address, you can still accomplish this by extracting the
+If you're running locally and don't have the ability to send an e-mail in order to
+get the link to verify an e-mail address, you can still accomplish this by extracting the
 relevant information out of your local MongoDB instance. Once you have gone through the
-initial account signup process, we get into our DB to grab our `signupKey`.
+initial account sign-up process, we get into our DB to grab our `signupKey`.
 
 ```mongo
 > use hydrophone
-> db.confirmations.find({'email':<account email address>}, {_id:1})
+> db.confirmations.find({'email':<account e-mail address>}, {_id:1})
 ```
 This should return you an object containing just the `_id` string you're interested in
 (this is just an example):
@@ -73,11 +73,17 @@ running Blip in a default configuration - use the id string you got from the dat
  http://localhost:3000/login?signupKey=uyo_2kWWRGLZ9i3xek2reAnBeTtWWvTZ
  ```
 Open this URL in your browser and you can complete the signup for your new user with the
-email verified. If you wish to confirm a successful verification, you can check the
+e-mail verified. If you wish to confirm a successful verification, you can check the
 database to see that `status` on the confirmation is `completed`:
 ```mongo
-> db.confirmations.find({'email':<account email address>}, {status:1})
+> db.confirmations.find({'email':<account e-mail address>}, {status:1})
 { "_id" : "uyo_2kWWRGLZ9i3xek2reAnBeTtWWvTZ", "status" : "completed" }
+```
+
+Alternatively, very soon (i.e., once the custodial user account creation work is on master) you will also be able to extract the `signupKey` from your local server logs. The log message will look something like:
+
+```
+2016/04/20 10:00:00 Sending email confirmation to you@email.com with key DXGNhyfzbcLpxwJ7BvtrfeeTOcvgabcd
 ```
 
 ### Working with the Local Database

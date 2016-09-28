@@ -57,7 +57,7 @@
         data-chapter-title="git and GitHub usage"
         data-filepath="GitHub/README.md"
         data-basepath=".."
-        data-revision="Wed May 04 2016 00:38:42 GMT-0700 (PDT)"
+        data-revision="Tue Sep 27 2016 15:12:18 GMT-0700 (PDT)"
         data-innerlanguage="">
     
 
@@ -172,7 +172,7 @@
 <li>changes to production build tooling</li>
 <li>changes to the production static server (for client apps like blip)</li>
 </ul>
-<p>Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub&apos;s interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., <strong>WIP. Don&apos;t merge!</strong> If you open a WIP pull request, please remember to <em>remove</em> the WIP warning language When the PR <em>is</em> ready for review and merge.</p>
+<p>Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub&apos;s interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., <strong>WIP. Don&apos;t merge!</strong> If you open a WIP pull request, please remember to <em>remove</em> the WIP warning language when the PR <em>is</em> ready for review and merge.</p>
 <h4 id="continuous-integration">Continuous Integration</h4>
 <p>In the vast majority of our app, service, and library repositories, if not all of them, we use the <a href="https://travis-ci.org/" title="Travis CI" target="_blank">Travis</a> continuous integration service, integrated with GitHub, to run linting and tests on every push and pull request. When you open a pull request, if Travis reports a failure, your first task will be to fix whatever caused it to fail (linting, tests, or both). Anyone you&apos;ve asked to review a PR may decline to do so until Travis is happy. Conversely, if someone has asked you to review a PR and Travis is in a sad/angry/&amp;c state, you may decline to begin reviewing until whatever Travis is choking on has been fixed.</p>
 <p>You should also wait for Travis to report back happily on a tag push before deploying the tag. (Exception: it&apos;s a known non-RC, tagged as such, and only being deployed to the dev environment.)</p>

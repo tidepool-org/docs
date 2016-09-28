@@ -28,7 +28,7 @@ Note that the following things, which may *seem* insignificant, are subject to c
 - changes to production build tooling
 - changes to the production static server (for client apps like blip)
 
-Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub's interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., **WIP. Don't merge!** If you open a WIP pull request, please remember to *remove* the WIP warning language When the PR *is* ready for review and merge.
+Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub's interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., **WIP. Don't merge!** If you open a WIP pull request, please remember to *remove* the WIP warning language when the PR *is* ready for review and merge.
 
 #### Continuous Integration
 

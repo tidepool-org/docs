@@ -10,7 +10,7 @@ In all application and library repositories, we use the `master` branch for prod
 
 When making a change in any repository (whether developing a new feature or fixing a bug), our convention is to create a new branch with the name `<GitHub username>/<short description>` - e.g., `jebeck/new-signup-flow` or `jebeck/bugfix-form-validation`. The backend team occasionally uses sprint-based branch names - e.g., `jh-bate/sprint25` or `jh-bate/sprint25-clinic-roles`.
 
-All significant changes should be made through a pull request that is approved by another Tidepool developer through a process of code review. We often use LGTM "looks good to me" as our approval sign-off at the conclusion of a review and/or one or more rounds of feedback and changes. One of the following (or any similarly unambiguous) emoji is also acceptable as sign-off: 🚢, 👍, or the GitHub ["ship it squirrel"](https://www.quora.com/GitHub/What-is-the-significance-of-the-Ship-It-squirrel 'Quora: Ship It Squirrel') (available with `:shipit:` but sadly a custom, not Unicode, emoji that cannot be pasted into this doc for demonstration).
+All significant changes should be made through a pull request that is approved by another Tidepool developer through a process of code review. We often use LGTM "looks good to me" as our approval sign-off at the conclusion of a review and/or one or more rounds of feedback and changes. One of the following (or any similarly unambiguous) emoji is also acceptable as sign-off: :ship: (<!-- ignore:advanced-emoji:start -->`:ship:`<!-- ignore:advanced-emoji:end -->), :thumbsup: (<!-- ignore:advanced-emoji:start -->`:thumbsup:`<!-- ignore:advanced-emoji:end -->), or the GitHub ["ship it squirrel"](https://www.quora.com/GitHub/What-is-the-significance-of-the-Ship-It-squirrel 'Quora: Ship It Squirrel') :shipit: (<!-- ignore:advanced-emoji:start -->`:shipit:`,`:squirrel:`<!-- ignore:advanced-emoji:end -->).
 
 What constitutes a *significant* change? In essence, it's anything that could potentially affect the user experience (though perhaps indirectly). It's probably easier, however, to just list the few things that are *not* significant changes:
 
@@ -28,7 +28,7 @@ Note that the following things, which may *seem* insignificant, are subject to c
 - changes to production build tooling
 - changes to the production static server (for client apps like blip)
 
-Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub's interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., **WIP. Don't merge!** If you open a WIP pull request, please remember to *remove* the WIP warning language When the PR *is* ready for review and merge.
+Sometimes we open a pull request before code is ready for review if we want another developer to take a look at the code progress so far. (GitHub's interface for viewing diffs being one of the easiest ways to do this.) In such cases, the PR should be clearly marked as a work-in-progress - e.g., **WIP. Don't merge!** If you open a WIP pull request, please remember to *remove* the WIP warning language when the PR *is* ready for review and merge.
 
 #### Continuous Integration
 

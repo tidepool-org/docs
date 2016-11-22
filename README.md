@@ -5,7 +5,7 @@ This is our repository at Tidepool for technical documentation that doesn't belo
 **Jump to...**
 
 - [git & GitHub usage](./GitHub/README.md)
-- [Tidepool's front end](./front-end/README.md)
+- [front-end @ Tidepool](./front-end/README.md)
 
 ## Working on these docs
 

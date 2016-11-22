@@ -4,6 +4,16 @@ At Tidepool, we use `git` for version control, with repositories hosted [on GitH
 
 This document describes our guidelines for `git` and GitHub usage.
 
+#### Table of contents
+
+- [Branches and pull requests](#branches-and-pull-requests)
+    - [Continuous integration](#continuous-integration)
+    - [Merging](#merging)
+- [Rebasing](#rebasing)
+- [Tags](#tags)
+
+* * * * *
+
 ### Branches and pull requests
 
 In all application and library repositories, we use the `master` branch for production code. Production _releases_ are tied to git [tags](#tags). (In our ops system, it is only possible to build and deploy an app or service from a tag.)

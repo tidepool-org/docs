@@ -2,7 +2,6 @@
 
 - [git and GitHub usage](GitHub/README.md)
 - [front-end @ Tidepool](front-end/README.md)
-    - [recipes & workflows](front-end/recipes.md)
     - [react @ Tidepool](front-end/react/README.md)
       - [recommended reading](front-end/react/recommended-reading.md)
       - [dependencies](front-end/react/dependencies.md)
@@ -13,3 +12,4 @@
       - [directory structure](front-end/redux/directory-structure.md)
       - [standard actions](front-end/redux/actions.md)
       - [testing strategies](front-end/redux/testing.md)
+    - [recipes & workflows](front-end/recipes.md)

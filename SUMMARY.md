@@ -2,11 +2,11 @@
 
 - [git and GitHub usage](GitHub/README.md)
 - [front-end @ Tidepool](front-end/README.md)
-    - [react @ Tidepool](front-end/react/README.md)
+    - [React @ Tidepool](front-end/react/README.md)
       - [recommended reading](front-end/react/recommended-reading.md)
       - [dependencies](front-end/react/dependencies.md)
       - [testing strategies](front-end/react/testing.md)
-    - [redux @ Tidepool](front-end/redux/README.md)
+    - [Redux @ Tidepool](front-end/redux/README.md)
       - [dependencies](front-end/redux/dependencies.md)
       - [custom middlewares](front-end/redux/custom-middlewares.md)
       - [directory structure](front-end/redux/directory-structure.md)

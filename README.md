@@ -2,6 +2,11 @@
 
 This is our repository at Tidepool for technical documentation that doesn't belong in a specific app/library/service repo.
 
+**Jump to...**
+
+- [git & GitHub usage](./GitHub/README.md)
+- [Tidepool's front end](./front-end/README.md)
+
 ## Working on these docs
 
 At Tidepool, we are starting to use [GitBook](https://www.gitbook.com/) for documentation across our client-side apps and here in this repository for "no man's land" docs without a proper home in another repo. We use [GitHub Pages](https://pages.github.com/) to publish the GitBook-generated docs on the web at various paths under the base URL of our developer microsite at [http://developer.tidepool.io/](http://developer.tidepool.io/). If you need to add or update the docs in this repo or in another repo that employs GitBook for publishing documentation, follow the instructions below.

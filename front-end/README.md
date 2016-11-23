@@ -7,6 +7,9 @@
     - [React @ Tidepool](./react/README.md)
     - [Redux @ Tidepool](./redux/README.md)
 - [Developer guides](#developer-guides)
+    - [blip](http://developer.tidepool.io/blip/docs/StartHere.html 'Tidepool developer portal: Blip developer guide')
+    - [chrome-uploader](http://developer.tidepool.io/chrome-uploader/docs/StartHere.html 'Tidepool developer portal: uploader developer guide')
+    - [viz](http://developer.tidepool.io/viz/docs/StartHere.html 'Tidepool developer portal: @tidepool/viz developer guide')
 - [Miscellaneous recipes](./recipes.md)
 
 <!-- TODO: add further links to individual developer guides -->
@@ -44,4 +47,6 @@ Our client applications at Tidepool are single-page applications using [React](h
 
 For each Tidepool client application and currently active dependent repository, please see the appropriate developer guide for more information about each project's architecture, usage of dependencies, etc.:
 
-<!-- TODO: add links to developer guides for blip and viz + specific page links for the uploader -->
+- [blip developer guide](http://developer.tidepool.io/blip/docs/StartHere.html 'Tidepool developer portal: Blip developer guide')
+- [Tidepool uploader developer guide](http://developer.tidepool.io/chrome-uploader/docs/StartHere.html 'Tidepool developer portal: uploader developer guide')
+- [@tidepool/viz developer guide](http://developer.tidepool.io/viz/docs/StartHere.html 'Tidepool developer portal: @tidepool/viz developer guide')

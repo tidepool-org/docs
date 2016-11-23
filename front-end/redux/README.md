@@ -4,6 +4,8 @@
 
 The Redux documentation is very well-written. If you are unfamiliar with the library, we recommended starting with the Redux [Intro](http://redux.js.org/docs/introduction/index.html 'Redux docs: Intro') and [Basics](http://redux.js.org/docs/basics/index.html 'Redux docs: Basics') docs to familiarize yourself with the standard Redux vocabulary before reading more of the documentation here about our use of Redux at Tidepool.
 
+It is also very important to read and understand the section of the Redux documentation dedicated to [Normalizing State Shape](http://redux.js.org/docs/recipes/reducers/NormalizingStateShape.html 'Redux docs: Normalizing State Shape'). A properly "normalized" state tree—in brief: storing detail information in only *one* place in state for each entity that can be referenced by an ID—is very important to reap all the benefits of Redux, in particular for having confidence that for any particular piece of state, there is a *single* source of truth for that state in the application.
+
 This documentation summarizes the design decisions[^a] that guide our usage of Redux across all our client web applications and internal dependencies at Tidepool. We expect all current and future developers at Tidepool to abide by these decisions and guidelines to the fullest extent possible in order to maintain a consistent developer experience across applications and foster a set of standards that will make maintenance, further development, and onboarding of additional developers and contributors as easy as possible.
 
 #### Table of contents

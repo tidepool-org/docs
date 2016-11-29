@@ -13,3 +13,4 @@
       - [standard actions](front-end/redux/actions.md)
       - [testing strategies](front-end/redux/testing.md)
     - [recipes & workflows](front-end/recipes.md)
+- [working on docs](docs/README.md)

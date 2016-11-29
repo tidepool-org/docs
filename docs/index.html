@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>front-end @ Tidepool | docs</title>
+        <title>working on docs | docs</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.6.7">
@@ -41,10 +41,8 @@
         
     
     
-    <link rel="next" href="../front-end/react/index.html" />
     
-    
-    <link rel="prev" href="../GitHub/index.html" />
+    <link rel="prev" href="../front-end/recipes.html" />
     
 
         
@@ -53,9 +51,9 @@
         
         
     <div class="book"
-        data-level="2"
-        data-chapter-title="front-end @ Tidepool"
-        data-filepath="front-end/README.md"
+        data-level="3"
+        data-chapter-title="working on docs"
+        data-filepath="docs/README.md"
         data-basepath=".."
         data-revision="Mon Nov 28 2016 17:44:42 GMT-0800 (PST)"
         data-innerlanguage="">
@@ -101,7 +99,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="2" data-path="front-end/index.html">
+        <li class="chapter " data-level="2" data-path="front-end/index.html">
             
                 
                     <a href="../front-end/index.html">
@@ -299,7 +297,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3" data-path="docs/index.html">
+        <li class="chapter active" data-level="3" data-path="docs/index.html">
             
                 
                     <a href="../docs/index.html">
@@ -347,56 +345,47 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h2 id="frontend--tidepool">front-end @ Tidepool</h2>
-<h4 id="table-of-contents">Table of contents</h4>
-<ul>
-<li><a href="#repositories-and-published-packages">Repositories and published packages</a></li>
-<li><a href="#common-tech-stack-and-usage">Common tech stack and usage</a><ul>
-<li><a href="react/index.html">React @ Tidepool</a></li>
-<li><a href="redux/index.html">Redux @ Tidepool</a></li>
-</ul>
-</li>
-<li><a href="#developer-guides">Developer guides</a><ul>
-<li><a href="http://developer.tidepool.io/blip/docs/StartHere.html" title="Tidepool developer portal: Blip developer guide" target="_blank">blip</a></li>
-<li><a href="http://developer.tidepool.io/chrome-uploader/docs/StartHere.html" title="Tidepool developer portal: uploader developer guide" target="_blank">chrome-uploader</a></li>
-<li><a href="http://developer.tidepool.io/viz/docs/StartHere.html" title="Tidepool developer portal: @tidepool/viz developer guide" target="_blank">viz</a></li>
-</ul>
-</li>
-<li><a href="recipes.html">Miscellaneous recipes</a></li>
-</ul>
-<!-- TODO: add further links to individual developer guides -->
-<hr>
-<h3 id="repositories-and-published-packages">Repositories and published packages</h3>
-<p>Tidepool has several repositories containing client-side JavaScript code in support of two client applications on the Tidepool platform, <a href="https://blip.tidepool.org/" title="Blip" target="_blank">blip</a> and the <a href="https://chrome.google.com/webstore/detail/tidepool-uploader/cabklgajffclbljkhmjphejemhpbghfb" title="Chrome web store: Tidepool uploader" target="_blank">Tidepool uploader</a>. The GitHub repositories containing the code for these two applications are:</p>
-<ul>
-<li><a href="https://github.com/tidepool-org/blip" title="GitHub: blip" target="_blank">blip</a></li>
-<li><a href="https://github.com/tidepool-org/chrome-uploader" title="GitHub: chrome-uploader" target="_blank">chrome-uploader</a></li>
-<li><a href="https://github.com/tidepool-org/tideline" title="GitHub: tideline" target="_blank">tideline</a>: data visualization code (in the process of being deprecated)</li>
-<li><a href="https://github.com/tidepool-org/viz" title="GitHub: viz" target="_blank">viz</a>: data visualization code (an incremental rewrite of tideline that is currently in progress)</li>
-<li><a href="https://github.com/tidepool-org/platform-client" title="GitHub: platform-client" target="_blank">platform-client</a>: Tidepool platform API utilities (to be deprecated eventually, but replacement efforts not yet started)</li>
-<li><a href="https://github.com/tidepool-org/sundial" title="GitHub: sundial" target="_blank">sundial</a>: a thin wrapper around the <a href="http://momentjs.com/" title="Moment.js" target="_blank">Moment.js</a> JavaScript datetime library (to be deprecated eventually and not used as an dependency in viz, but other replacement efforts have not yet been started)</li>
-</ul>
-<p>For the four of these repositories that are internal dependencies rather than application code, we publish the repository code to the <a href="https://www.npmjs.com/" title="node package manager" target="_blank">node package manager (npm)</a>, which we also use to manage our external JavaScript dependencies:</p>
-<ul>
-<li><a href="https://www.npmjs.com/package/tideline" title="tideline on npm" target="_blank">tideline on npm</a></li>
-<li><a href="https://www.npmjs.com/package/sundial" title="sundial on npm" target="_blank">sundial on npm</a></li>
-<li><a href="https://www.npmjs.com/package/tidepool-platform-client" title="platform-client on npm" target="_blank">tidepool-platform-client on npm</a></li>
-<li><a href="https://www.npmjs.com/package/@tidepool/viz" title="@tidepool/viz on npm" target="_blank">@tidepool/viz on npm</a></li>
-</ul>
-<p>The newest of these&#x2014;@tidepool/viz&#x2014;uses the <code>@tidepool</code> <a href="https://docs.npmjs.com/getting-started/scoped-packages" title="npm: scoped packages" target="_blank">npm &quot;scope&quot;, a new(ish) feature</a>. Any future internal dependencies also published to npm should also use the @tidepool scope.</p>
-<h3 id="common-tech-stack-and-usage">Common tech stack and usage</h3>
-<p>Our client applications at Tidepool are single-page applications using <a href="https://facebook.github.io/react/" title="React" target="_blank">React</a> with <a href="http://redux.js.org/" title="Redux" target="_blank">Redux</a> for state management. For information on our general approach to React and Redux development at Tidepool, please read the following:</p>
-<ul>
-<li><a href="react">React @ Tidepool</a></li>
-<li><a href="redux">Redux @ Tidepool</a></li>
-</ul>
-<h3 id="developer-guides">Developer guides</h3>
-<p>For each Tidepool client application and currently active dependent repository, please see the appropriate developer guide for more information about each project&apos;s architecture, usage of dependencies, etc.:</p>
-<ul>
-<li><a href="http://developer.tidepool.io/blip/docs/StartHere.html" title="Tidepool developer portal: Blip developer guide" target="_blank">blip developer guide</a></li>
-<li><a href="http://developer.tidepool.io/chrome-uploader/docs/StartHere.html" title="Tidepool developer portal: uploader developer guide" target="_blank">Tidepool uploader developer guide</a></li>
-<li><a href="http://developer.tidepool.io/viz/docs/StartHere.html" title="Tidepool developer portal: @tidepool/viz developer guide" target="_blank">@tidepool/viz developer guide</a></li>
-</ul>
+                        <h2 id="docs-for-docs">docs for docs!</h2>
+<p>At Tidepool, we are starting to use <a href="https://www.gitbook.com/" target="_blank">GitBook</a> for documentation across our client-side apps and here in this repository for &quot;no man&apos;s land&quot; docs without a proper home in another repo. We use <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> to publish the GitBook-generated docs on the web at various paths under the base URL of our developer microsite at <a href="http://developer.tidepool.io/" target="_blank">http://developer.tidepool.io/</a>. If you need to add or update the docs in this repo or in another repo that employs GitBook for publishing documentation, follow the instructions below.</p>
+<h3 id="setting-up-your-repo-to-work-on-docs">Setting up your repo to work on docs</h3>
+<p>When you use GitHub Pages to host a website for a particular project (like this one), you must create a branch titled <code>gh-pages</code> that contains all the files for your (static) website. Since for most repositories, this <code>gh-pages</code> branch contains content that is very different from other branches, <a href="https://help.github.com/articles/creating-project-pages-manually/" target="_blank">GitHub&apos;s advice</a> is to use a separate clone of the repository to manage <em>just</em> the <code>gh-pages</code> branch. This is what jebeck does, and she recommends the following set up procedure:</p>
+<ol>
+<li>Clone another copy of this repository, nested inside your top-level <code>docs</code> directory, but give it the name &apos;web&apos;: <code>git clone git@github.com:tidepool-org/docs.git web</code>. (The optional final argument to <code>git clone</code> tells git to name the cloned directory something other than the default repo name.)</li>
+<li>Navigate into the new clone with <code>cd web/</code>.</li>
+<li>Checkout the gh-pages branch in the new clone with <code>git checkout gh-pages</code>.</li>
+<li>Delete the <code>master</code> branch in the new clone since you will <em>only</em> be using this clone for managing the GitHub Pages code for the repo: <code>git branch -d master</code>.</li>
+<li>Test that you can view the GitHub Pages site locally by serving up the site to yourself (e.g., with the Python one-liner <code>python -m SimpleHTTPServer</code>) and viewing it in a browser.</li>
+</ol>
+<p>(Example given for this repository <code>docs</code>, but the same procedure is recommended for all Tidepool repos using GitBook, just substitute the repo name (e.g., <code>chrome-uploader</code>) for <code>docs</code> in the above instructions.)</p>
+<h3 id="adding-or-updating-docs">Adding or updating docs</h3>
+<p>The <a href="https://help.gitbook.com/" target="_blank">GitBook documentation</a> is a good, well-organized resource, but the basics are very simple and summarized here.</p>
+<p>GitBook is a tool for compiling documentation from <a href="https://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> files. At Tidepool, thus far our only target for compilation is a static website that can be hosted on GitHub Pages, but GitBook offers other compilation targets, including PDF and e-reader formats.</p>
+<p>At the top level, GitBook requires at minimum a <code>README.md</code>, which serves as the landing site for the documentation. (This <code>README.md</code> you are reading right now is thus the main page content for <a href="http://developer.tidepool.io/docs/index.html" target="_blank">http://developer.tidepool.io/docs/index.html</a>.) A <code>SUMMARY.md</code> is also required; the <code>SUMMARY.md</code> is where the docs are organized hierarchically, and one very nice thing about GitBook is that the hierarchy as described in the <code>SUMMARY.md</code> does <em>not</em> have to match the directory structure of the repository! If a Markdown file is <em>not</em> linked in the <code>SUMMARY.md</code>, it will <strong>not</strong> be compiled by GitBook (and may appear in your browser as plain Markdown), even if it is linked from another file that <em>is</em> linked in the <code>SUMMARY.md</code>. This issue of a missing link to a new file from the <code>SUMMARY.md</code> often surfaces with the error message &quot;[some page] contains an hyperlink to resource outside spine [unlinked Markdown file]&quot; during compilation. Basically, if you see that error, check the <code>SUMMARY.md</code> to make sure it includes everything it should.</p>
+<p>Within each sub-directory of docs in your repository, it is conventional to include a <code>README.md</code> as the intro and table of contents for that sub-section of the documentation. In general, a typical GitBook structure (when one is matching directory structure to the <code>SUMMARY.md</code>, although this is not required) looks like the following:</p>
+<pre><code class="lang-Markdown"><span class="hljs-header"># Summary</span>
+
+<span class="hljs-bullet">- </span>[<span class="hljs-link_label">sandwich</span>](<span class="hljs-link_url">sandwich/README.md</span>)
+   + [<span class="hljs-link_label">bacon</span>](<span class="hljs-link_url">sandwich/bacon.md</span>)
+   + [<span class="hljs-link_label">lettuce</span>](<span class="hljs-link_url">sandwich/lettuce.md</span>)
+   + [<span class="hljs-link_label">tomato</span>](<span class="hljs-link_url">sandwich/tomato.md</span>)
+</code></pre>
+<p>Every repository (including this one) that uses GitBook will include scripts for serving the docs to yourself locally (in order to work on them) and to compile the docs, copying the result into the embedded clone of the repository used to manage the <code>gh-pages</code> branch (see <a href="#setting-up-your-repo-to-work-on-docs">Setting up your repo to work on docs</a> above).</p>
+<p>To serve the docs to yourself locally at <a href="http://localhost:4000/" target="_blank">http://localhost:4000/</a>:</p>
+<pre><code class="lang-bash">$ npm run serve-docs
+</code></pre>
+<p>(In this repository and <a href="https://github.com/tidepool-org/data-model" target="_blank">the data model docs repository</a>, the primary purpose of both of which is documentation, you can also serve the docs with <code>npm start</code>.)</p>
+<p>To compile the docs to a static website and copy the result to the embedded clone of the repository in <code>web/</code>:</p>
+<pre><code class="lang-bash">$ npm run build-docs
+</code></pre>
+<h3 id="publishing-docs">Publishing docs</h3>
+<p>After building the docs with <code>npm run build-docs</code>, publishing the docs via GitHub Pages requires only a few additional steps:</p>
+<ol>
+<li>First, navigate to the embedded clone of the repo used for managing the <code>gh-pages</code> branch with <code>cd web/</code>.</li>
+<li>(If desired, preview the static site by serving it to yourself with a simple static server (e.g., the Python one-liner <code>python -m SimpleHTTPServer</code>).)</li>
+<li>Check the changes with <code>git diff</code> or however you prefer to view changes. One thing to look out for here is irrelevant files that got synced - you may need to clear the changes inside <code>web/</code>, adjust the list of ignored files and directories in the <code>.bookignore</code> file, and rebuild the static site if files unnecessary for the static site (which should be just HTML files, outside of the CSS, JavaScript, and fonts provided under <code>gitbook/</code>) have been copied into <code>web/</code>.</li>
+<li>Stage and commit the changes if you&apos;re happy with them.</li>
+<li>Publish to GitHub Pages by pushing your new commit(s) to the upstream <code>gh-pages</code> branch: <code>git push origin gh-pages</code>.</li>
+</ol>
 
                     
                     </section>
@@ -407,10 +396,8 @@
         </div>
 
         
-        <a href="../GitHub/index.html" class="navigation navigation-prev " aria-label="Previous page: git and GitHub usage"><i class="fa fa-angle-left"></i></a>
+        <a href="../front-end/recipes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: recipes &amp; workflows"><i class="fa fa-angle-left"></i></a>
         
-        
-        <a href="../front-end/react/index.html" class="navigation navigation-next " aria-label="Next page: React @ Tidepool"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

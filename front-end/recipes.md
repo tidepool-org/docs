@@ -2,6 +2,17 @@
 
 This document collects some "recipes" and workflows for (mainly) front-end engineers at Tidepool.
 
+#### Table of contents
+
+- [Running blip locally with hot module replacement](#a-running-the-platform-locally-with-runservers-but-blip-with-hot-module-replacement-hmr-via-webpack)
+- [Changing the `MINIMUM_UPLOADER_VERSION` in jellyfish locally](#b-changing-the-minimumuploaderversion-in-jellyfish-locally)
+- [Working on API error states in client apps](#c-working-on-the-ui-for-api-error-states-in-the-uploader-or-blip)
+- [Running against `dev`](#d-running-against-the-dev-environment)
+- [Verifying an e-mail address without sending an e-mail](#e-verifying-an-email-address-without-sending-an-email)
+- [Working with the local database](#f-working-with-the-local-database)
+
+* * * * *
+
 #### Background
 
 We're building a *platform* at Tidepool, and while in the past we had some solutions[^1] for isolating work on front-end code, we've found those solutions fragile and too difficult to maintain as a small team, and so in general (although it feels like "overkill") we front-end engineers at Tidepool often run the entire platform locally while we work. There are a few tips & tricks necessary to do this most efficiently and take full advantage of our front-end developer tools, like [webpack hot module replacement](https://github.com/webpack/docs/wiki/hot-module-replacement-with-webpack 'GitHub: webpack wiki on HMR').
@@ -86,7 +97,7 @@ Alternatively, very soon (i.e., once the custodial user account creation work is
 2016/04/20 10:00:00 Sending email confirmation to you@email.com with key DXGNhyfzbcLpxwJ7BvtrfeeTOcvgabcd
 ```
 
-### Working with the Local Database
+### F: Working with the Local Database
 
 Working with your local mongo database is pretty easy via [the mongo Shell](https://docs.mongodb.org/manual/reference/mongo-shell/ 'mongo Shell Quick Reference'), but here are a couple of very common recipes to get started.
 

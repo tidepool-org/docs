@@ -14,3 +14,5 @@
       - [testing strategies](front-end/redux/testing.md)
     - [recipes & workflows](front-end/recipes.md)
 - [working on docs](docs/README.md)
+    - [docs guidelines](docs/guidelines.md)
+    - [docs setup & workflow](docs/workflow.md)

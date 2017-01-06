@@ -41,6 +41,8 @@
         
     
     
+    <link rel="next" href="../docs/guidelines.html" />
+    
     
     <link rel="prev" href="../front-end/recipes.html" />
     
@@ -55,7 +57,7 @@
         data-chapter-title="working on docs"
         data-filepath="docs/README.md"
         data-basepath=".."
-        data-revision="Thu Jan 05 2017 09:05:43 GMT-0800 (PST)"
+        data-revision="Fri Jan 06 2017 11:47:05 GMT-0800 (PST)"
         data-innerlanguage="">
     
 
@@ -310,6 +312,42 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="docs/guidelines.html">
+            
+                
+                    <a href="../docs/guidelines.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        docs guidelines
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="docs/workflow.html">
+            
+                
+                    <a href="../docs/workflow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        docs setup &amp; workflow
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
 
@@ -346,55 +384,11 @@
                     <section class="normal" id="section-">
                     
                         <h2 id="docs-for-docs">docs for docs!</h2>
-<p>At Tidepool, we are using <a href="https://www.gitbook.com/" target="_blank">GitBook</a> for documentation across our client-side apps and here in this repository for &quot;no man&apos;s land&quot; docs without a proper home in another repo. GitBook is a tool for generating a static documentation website (with built-in search) from a set of Markdown files (which are handily thus natively renderable by the GitHub online interface). We use <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> to publish the GitBook-generated static assets on the web at various paths under the base URL of our developer microsite at <a href="http://developer.tidepool.io/" target="_blank">http://developer.tidepool.io/</a>. If you need to add or update the docs in this repo or in another repo that employs GitBook for publishing documentation, follow the instructions below.</p>
-<h3 id="setting-up-your-repo-to-work-on-docs">Setting up your repo to work on docs</h3>
-<p>When we at Tidepool first set up our docs workflow using GitBook, there was only one way to set up <a href="https://pages.github.com/" title="GitHub Pages" target="_blank">GitHub Pages</a> for a project: putting the static assets (HTML, CSS, etc.) you wanted GitHub to serve as your GitHub Pages site on a branch in your repository named <code>gh-pages</code>. This method of building a GitHub Pages site still exists, and it&apos;s what we still use at Tidepool<sup><a href="#fn_a" id="reffn_a">a</a></sup>. Every time we update the static assets on the <code>gh-pages</code> branch and push to the GitHub remote repository, our project page is updated to serve the new static files.</p>
-<p>The workflow for managing one&apos;s static assets when the method of publishing is the <code>gh-pages</code> branch is a little unintuitive since the code on the <code>gh-pages</code> branch (a bunch of HTML &amp; CSS files) has very little relation (in most cases) to the code on the <code>master</code> and other branches in the repository. We follow the workflow originally recommended by GitHub, which involves creating an embedded separate clone of the repository with <em>only</em> the <code>gh-pages</code> branch. Using a separate clone to manage the <code>gh-pages</code> branch makes everything easier and less confusing/dangerous when there is <em>zero</em> code shared between the <code>gh-pages</code> branch and <code>master</code> (or other branches). When you <em>embed</em> the separate clone inside your working repository&#x2014;in our case, always with the directory name <code>web</code> (see step (1) in the setup instructions below)&#x2014;this allows scripting tools to target the embedded clone/directory where the <code>gh-pages</code> branch is <em>always</em> checked out. In our case, every repository using GitBook contains the GitBook source Markdown files on <code>master</code> (often in a <code>docs/</code> directory but also in other locations as necessary). Then the <code>update-gh-pages.sh</code> build script included in each repository runs the GitBook build tool to generate the static HTML, CSS, and JavaScript files <em>in the embedded repository clone</em> so that the build result ends up on the <code>gh-pages</code> branch where it needs to be to &quot;publish&quot; the site updates by pushing the branch up to the GitHub remote.</p>
-<p>To set up this workflow for yourself, follow these steps:</p>
-<ol>
-<li>Clone another copy of this repository, nested inside your top-level <code>docs</code> directory, but give it the name &apos;web&apos;: <code>git clone git@github.com:tidepool-org/docs.git web</code>. (The optional final argument to <code>git clone</code> tells git to name the cloned directory something other than the default repo name.)</li>
-<li>Navigate into the new clone with <code>cd web/</code>.</li>
-<li>Checkout the gh-pages branch in the new clone with <code>git checkout gh-pages</code>.</li>
-<li>Delete the <code>master</code> branch in the new clone since you will <em>only</em> be using this clone for managing the GitHub Pages code for the repo: <code>git branch -d master</code>.</li>
-<li>Test that you can view the GitHub Pages site locally by serving up the site to yourself (e.g., with the Python one-liner <code>python -m SimpleHTTPServer</code>) and viewing it in a browser.</li>
-</ol>
-<p>(Example given for this repository <code>docs</code>, but the same procedure is recommended for all Tidepool repos using GitBook, just substitute the repo name (e.g., <code>chrome-uploader</code>) for <code>docs</code> in the above instructions.)</p>
-<p>When you want to make changes to docs, you will branch from <code>master</code> and edit the source Markdown file(s), then open a pull request against <code>master</code> as usual. After the pull request is merged, simply run the <code>update-gh-pages.sh</code> script and follow the instructions at the conclusion of the script to navigate into <code>web/</code> and check that the build was successful (e.g., step (5) above), that no non-HTML, CSS, or GitBook-related JavaScript files were incorrectly copied into the embedded clone<sup><a href="#fn_b" id="reffn_b">b</a></sup>, and then commit the changes and push <code>gh-pages</code> to the GitHub remote to &quot;publish&quot; the changes to the site.</p>
-<h3 id="adding-or-updating-docs">Adding or updating docs</h3>
-<p>The <a href="https://help.gitbook.com/" target="_blank">GitBook documentation</a> is a good, well-organized resource, but the basics are very simple and summarized here.</p>
-<p>GitBook is a tool for compiling documentation from <a href="https://daringfireball.net/projects/markdown/" target="_blank">Markdown</a> files. At Tidepool, thus far our only target for compilation is a static website that can be hosted on GitHub Pages, but GitBook offers other compilation targets, including PDF and e-reader formats.</p>
-<p>At the top level, GitBook requires at minimum a <code>README.md</code>, which serves as the landing site for the documentation. (This <code>README.md</code> you are reading right now is thus the main page content for <a href="http://developer.tidepool.io/docs/index.html" target="_blank">http://developer.tidepool.io/docs/index.html</a>.) A <code>SUMMARY.md</code> is also required; the <code>SUMMARY.md</code> is where the docs are organized hierarchically, and one very nice thing about GitBook is that the hierarchy as described in the <code>SUMMARY.md</code> does <em>not</em> have to match the directory structure of the repository! If a Markdown file is <em>not</em> linked in the <code>SUMMARY.md</code>, it will <strong>not</strong> be compiled by GitBook (and may appear in your browser as plain Markdown), even if it is linked from another file that <em>is</em> linked in the <code>SUMMARY.md</code>. This issue of a missing link to a new file from the <code>SUMMARY.md</code> often surfaces with the error message &quot;[some page] contains an hyperlink to resource outside spine [unlinked Markdown file]&quot; during compilation. Basically, if you see that error, check the <code>SUMMARY.md</code> to make sure it includes everything it should.</p>
-<p>Within each sub-directory of docs in your repository, it is conventional to include a <code>README.md</code> as the intro and table of contents for that sub-section of the documentation. In general, a typical GitBook structure (when one is matching directory structure to the <code>SUMMARY.md</code>, although this is not required) looks like the following:</p>
-<pre><code class="lang-Markdown"><span class="hljs-header"># Summary</span>
-
-<span class="hljs-bullet">- </span>[<span class="hljs-link_label">sandwich</span>](<span class="hljs-link_url">sandwich/README.md</span>)
-   + [<span class="hljs-link_label">bacon</span>](<span class="hljs-link_url">sandwich/bacon.md</span>)
-   + [<span class="hljs-link_label">lettuce</span>](<span class="hljs-link_url">sandwich/lettuce.md</span>)
-   + [<span class="hljs-link_label">tomato</span>](<span class="hljs-link_url">sandwich/tomato.md</span>)
-</code></pre>
-<p>Every repository (including this one) that uses GitBook will include scripts for serving the docs to yourself locally (in order to work on them) and to compile the docs, copying the result into the embedded clone of the repository used to manage the <code>gh-pages</code> branch (see <a href="#setting-up-your-repo-to-work-on-docs">Setting up your repo to work on docs</a> above).</p>
-<p>To serve the docs to yourself locally at <a href="http://localhost:4000/" target="_blank">http://localhost:4000/</a>:</p>
-<pre><code class="lang-bash">$ npm run serve-docs
-</code></pre>
-<p>(In this repository and <a href="https://github.com/tidepool-org/data-model" target="_blank">the data model docs repository</a>, the primary purpose of both of which is documentation, you can also serve the docs with <code>npm start</code>.)</p>
-<p>To compile the docs to a static website and copy the result to the embedded clone of the repository in <code>web/</code>:</p>
-<pre><code class="lang-bash">$ npm run build-docs
-</code></pre>
-<h3 id="publishing-docs">Publishing docs</h3>
-<p>After building the docs with <code>npm run build-docs</code>, publishing the docs via GitHub Pages requires only a few additional steps:</p>
-<ol>
-<li>First, navigate to the embedded clone of the repo used for managing the <code>gh-pages</code> branch with <code>cd web/</code>.</li>
-<li>(If desired, preview the static site by serving it to yourself with a simple static server (e.g., the Python one-liner <code>python -m SimpleHTTPServer</code>).)</li>
-<li>Check the changes with <code>git diff</code> or however you prefer to view changes. One thing to look out for here is irrelevant files that got synced - you may need to clear the changes inside <code>web/</code>, adjust the list of ignored files and directories in the <code>.bookignore</code> file, and rebuild the static site if files unnecessary for the static site (which should be just HTML files, outside of the CSS, JavaScript, and fonts provided under <code>gitbook/</code>) have been copied into <code>web/</code>.</li>
-<li>Stage and commit the changes if you&apos;re happy with them.</li>
-<li>Publish to GitHub Pages by pushing your new commit(s) to the upstream <code>gh-pages</code> branch: <code>git push origin gh-pages</code>.</li>
-</ol>
-<blockquote id="fn_a">
-<sup>a</sup>. GitHub has since added a couple of far simpler methods, which are simply (a) including an <code>index.html</code> at the root level of your repository on <code>master</code> and choosing the appropriate repo setting to use that as the index for your GitHub Pages site or (b) including all static assets for your GitHub Pages site in a <code>docs/</code> directory on <code>master</code> (again choosing the appropriate repo setting to tell GitHub to serve the files in this directory as your static site). Eventually perhaps it will make sense for us to upgrade to the simpler <code>docs/</code> directory workflow, but at the moment with everything set up in the <code>gh-pages</code> branch workflow, investing the time to make the switch is not a high enough priority. (The <code>gh-pages</code> branch workflow also has the advantage of being somewhat cleaner when creating docs with GitBook since only the raw, source Markdown files are tracked on <code>master</code>, removing the potential for a mismatch between the source and compiled static assets, if both were tracked on <code>master</code>.)<a href="#reffn_a" title="Jump back to footnote [a] in the text."> &#x21A9;</a>
-</blockquote>
-<blockquote id="fn_b">
-<sup>b</sup>. If you do find non-GitBook HTML, CSS, and JavaScript files in the changes in the embedded clone, you may need to update the <a href="https://toolchain.gitbook.com/structure.html#ignore" title="GitBook Toolchain Docs: Ignoring files &amp; folders" target="_blank"><code>.bookignore</code></a> file.<a href="#reffn_b" title="Jump back to footnote [b] in the text."> &#x21A9;</a>
-</blockquote>
+<p>In this section, you can read about:</p>
+<ul>
+<li><a href="guidelines.html">our guidelines for technical documentation</a></li>
+<li><a href="workflow.html">technical details of working on (GitBook) docs</a></li>
+</ul>
 
                     
                     </section>
@@ -405,8 +399,10 @@
         </div>
 
         
-        <a href="../front-end/recipes.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: recipes &amp; workflows"><i class="fa fa-angle-left"></i></a>
+        <a href="../front-end/recipes.html" class="navigation navigation-prev " aria-label="Previous page: recipes &amp; workflows"><i class="fa fa-angle-left"></i></a>
         
+        
+        <a href="../docs/guidelines.html" class="navigation navigation-next " aria-label="Next page: docs guidelines"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

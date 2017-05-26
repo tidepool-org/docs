@@ -2,19 +2,22 @@
 
 **tl;dr**: Handling datetimes in the modern world is hard. Like, *really freaking hard*. 😓
 
-What are some of the things that make it hard? A short list: Daylight Savings, frequent cross-timezone travel, and technology like smart phones and browsers operating in an always locale-aware manner. This is @jebeck's handy guide to the most common situations at Tidepool where you'll have to handle datetimes and the best strategies for doing so.
+What are some of the things that make it hard? A short list: DST, frequent cross-timezone travel, and technology like smart phones and browsers operating in an always locale-aware manner. This is @jebeck's handy guide to the most common situations at Tidepool where you'll have to handle datetimes and the best strategies for doing so.
 
 ### Prerequisites
 
-We need to start with the same vocabulary, as some terms are similar but the differences between them can be *crucial*. Before continuing with this guide, review the following terms in the glossary:
+We need to start with the same vocabulary, as some terms are similar but the differences between them can be *crucial*. Before continuing with this guide, review the following terms in the [glossary](../GLOSSARY.md):
 
+- BtUTC
 - calendar date
+- clock time
 - datetime
 - DST
 - hammertime
-- named timezone
+- ISO 8601
+- timezone
 - timezone offset
-- Unix/POSIX/epoch time
+- Unix time
 - UTC
 
 In addition to this background vocabulary, here are a few readings and videos that are also well worth study, though maybe not all at once:

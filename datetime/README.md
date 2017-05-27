@@ -20,7 +20,9 @@ We need to start with the same vocabulary, as some terms are similar but the dif
 - Unix time
 - UTC
 
-In addition to this background vocabulary, here are a few readings and videos that are also well worth study, though maybe not all at once:
+It is also essential for those handling datetimes on diabetes devices for *ingestion* into the Tidepool platform to review the [falsehoods Tidepoolers (want to) believe about diabetes device times](./falsehoods.md 'Falsehoods Tidepoolers (want to) believe about diabetes device times'). (It is certainly advisable for those handling datetimes on diabetes data in the client(s) to review this list as well, but it isn't quite as essential.)
+
+In addition to these prerequisites, here are a few readings and videos that are also well worth study, though maybe not all at once:
 
 - [Falsehoods programmers believe about time](http://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time 'Falsehoods programmers believe about time')[^a]
 

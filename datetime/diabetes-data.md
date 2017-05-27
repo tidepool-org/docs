@@ -3,7 +3,8 @@
 #### Table of contents
 
 - [Background](#background)
-- [Falsehoods Tidepoolers (want to) believe about diabetes device times](#falsehoods-tidepoolers-want-to-believe-about-diabetes-device-times)
+- [Handling diabetes data datetimes on ingestion](#handling-diabetes-data-datetimes-on-ingestion)
+- [Handling diabetes data datetimes in the client(s)](#handling-diabetes-data-datetimes-in-the-clients)
 
 ### Background
 
@@ -39,23 +40,21 @@ More precisely as a computer would perform this calculation, having parsed the f
 
 This equation is true in the vast majority of cases, but there are slightly more complex edge cases as well, but those are not relevant outside of the BtUTC algorithm itself, so the interested or needful reader should [refer to the BtUTC technical documentation](http://developer.tidepool.io/chrome-uploader/docs/BootstrappingToUTC.html 'Bootstrapping to UTC') for further details.
 
-### Falsehoods Tidepoolers (want to) believe about diabetes device times
+The *storage* protocols for datetimes on diabetes devices isn't even the only source of problems in handling them. The PwD's behavior in managing their devices' display time also causes complications. The user interfaces on many diabetes devices are not designed well, so aside from inattention, errors sometimes occur because they are *easier* to make in the interface than non-errors.
 
-The *storage* protocols for datetimes on diabetes devices isn't even the only source of problems in handling them. The PwD's behavior in managing their devices' display time also causes complications. The user interfaces on many diabetes devices are not designed well, so aside from inattention, errors sometimes occur because they are easier to make in the interface than non-errors.
+In general, it is good to approach diabetes device times with a very, very small set of assumptions. In other words, avoid all of [this list of assumptions](./falsehoods.md 'Falsehoods Tidepoolers (want to) believe about diabetes device times'), which have been proven false in one way or another (and often repeatedly) at Tidepool.
 
-In general, it is good to approach diabetes device times with a very, very small set of assumptions. In other words, avoiding all of the following assumptions, which have been proven false in one way or another (and often repeatedly) at Tidepool:
+### Handling diabetes data datetimes on ingestion
 
-- the display time on a PwD's device will be accurate to their local time
-- OK, but it will be pretty close (within minutes)
-- OK, maybe sometimes it will be an hour off because of a DST changeover
-- OK, but the PwD will definitely remember to change the display time before the *next* DST changeover
-- OK, but it won't be a month off
-- OK, but it won't be a year off
-- OK, but it won't be a decade off[^b]
-- OK, but it won't possibly ever be January 1st, 2007 or January 1st, 2008 if the PwD didn't get the device until 2015, *surely*
-- no two (or more) events will share the *exact* same datetime
+If the only thing an engineer implementing the protocol to read data from a diabetes device needed to know about handling datetimes properly was "run the BtUTC algorithm," then there wouldn't be much of a need for this section. As the reader may have guessed already, BtUTC gets you most of the way there, but not all the way. There is at least one situation—plus BtUTC edge cases and bugs—that will still require the engineer working on data ingestion to manipulate diabetes device datetimes directly.
+
+#### Schedule lookup
+
+### Handling diabetes data datetimes in the client(s)
+
 
 - - - - -
 
 [^a]: Not pathologically or maliciously badly. Just, you know, *poorly*.
 [^b]: Just kidding! We haven't actually seen this one yet at Tidepool. But it's the *only one*. Yes. *Really.*
+[^c]: These are the two most common "default" times that we've seen on diabetes devices. These default times surface on events under various circumstances, the most common of which is a clock error due to extended lack of power to the device (dead battery or battery out too long).

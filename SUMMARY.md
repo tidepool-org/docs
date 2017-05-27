@@ -2,6 +2,7 @@
 
 - [datetime guide](datetime/README.md)
     - [diabetes data datetimes](datetime/diabetes-data.md)
+    - [falsehoods re: diabetes data datetimes](datetime/falsehoods.md)
     - [now](datetime/now.md)
     - [user-significant dates](datetime/user-dates.md)
 - [git and GitHub usage](GitHub/README.md)

@@ -32,7 +32,7 @@ In addition to these prerequisites, here are a few readings and videos that are 
 
 The first key takeaway is that there is not *one* guide to datetimes at Tidepool. There are three: three distinct guides for three quite distinct situations. Or really, three distinct types of datetimes that are encountered regularly in the Tidepool codebase. So the first question a Tidepool engineer should ask themself is, "What kind of datetime am I trying to manipulate?" Then look at the appropriate guide below:
 
-- [guide to handling diabetes data](./diabetes-data.md): This is the *epic* one, naturally given Tidepool's mission. If you are dealing with a `time` or a `deviceTime` from a datum conforming to the Tidepool data model, this is the guide for you!
+- [guide to handling diabetes data](./diabetes-data.md): This is the big one, naturally given Tidepool's mission. If you are dealing with a `time` or a `deviceTime` from a datum conforming to the Tidepool data model, this is the guide for you!
 - [guide to handling browser-local datetimes in the present moment (i.e., `now`s)](./now.md): If you're trying to manipulate the datetime representing a user's action in the present moment—that is, a "now"—then this is the guide you want.
 - [guide to handling user-significant calendar dates](./user-dates.md): If you're working with any calendar date stored in the user's profile (as of May 2017, these are `birthday` and `diagnosisDate`), look at this guide.
 

@@ -50,7 +50,15 @@ If the only thing an engineer implementing the protocol to read data from a diab
 
 #### Schedule lookup
 
+Basal schedules and other insulin pump settings are based on a schedule that is expressed in device local time. When a user changes their device's display time setting, the schedule will follow the new display time rather than shifting.
+
+The implications of this when ingesting device data are that in situations where the ingestion process needs to look up information from a currently active schedule in the currently active device settings, the ingestion engineer must translate the event's post-BtUTC `time` back to a `deviceTime` (i.e., a "display time") in order to look up which segment of the currently active schedule the event falls into. 
+
 ### Handling diabetes data datetimes in the client(s)
+
+In the client, the guideline for handling diabetes data datetimes is quite simple: use the `time` field in the Tidepool data model, in combination with the user's configured timezone preferences.
+
+When using [Moment.js](https://momentjs.com/ 'Moment.js') to manipulate and/or display diabetes device datetimes using the `time` field in the Tidepool data model, in every case your usage should begin with `moment.utc(time).tz(timezone)`. For good examples of this, refer to [viz's datetime utilities](https://github.com/tidepool-org/viz/blob/master/src/utils/datetime.js '@tidepool/viz: datetime utilities').
 
 
 - - - - -

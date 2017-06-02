@@ -50,6 +50,16 @@ The concept of *right now, today, as you are reading this* is a datetime. 😉
 
 - - - - -
 
+## display time
+
+A display time is a type of *relative* datetime---that is, a datetime without timezone information and therefore **not** anchored to UTC.
+
+#### examples
+
+If you are a PwD, look at one of your diabetes devices right now; find the datetime display. Congratulations, unless you are looking at the time display on your iPhone for a Dexcom G5 system, you are looking at a display time.
+
+- - - - -
+
 ## DST
 
 Daylight saving time (abbreviated DST) is the practice of advancing clock time by an hour during the summer months so that evening daylight lasts longer.

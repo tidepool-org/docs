@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>working on docs · GitBook</title>
+        <title>falsehoods re: diabetes data datetimes · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="guidelines.html" />
+    <link rel="next" href="now.html" />
     
     
-    <link rel="prev" href="../front-end/recipes.html" />
+    <link rel="prev" href="diabetes-data.html" />
     
 
     </head>
@@ -106,9 +106,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../datetime/">
+        <li class="chapter " data-level="1.2" data-path="./">
             
-                <a href="../datetime/">
+                <a href="./">
             
                     
                     datetime guide
@@ -120,9 +120,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../datetime/diabetes-data.html">
+        <li class="chapter " data-level="1.2.1" data-path="diabetes-data.html">
             
-                <a href="../datetime/diabetes-data.html">
+                <a href="diabetes-data.html">
             
                     
                     diabetes data datetimes
@@ -133,9 +133,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../datetime/falsehoods.html">
+        <li class="chapter active" data-level="1.2.2" data-path="falsehoods.html">
             
-                <a href="../datetime/falsehoods.html">
+                <a href="falsehoods.html">
             
                     
                     falsehoods re: diabetes data datetimes
@@ -146,9 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../datetime/now.html">
+        <li class="chapter " data-level="1.2.3" data-path="now.html">
             
-                <a href="../datetime/now.html">
+                <a href="now.html">
             
                     
                     now
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../datetime/user-dates.html">
+        <li class="chapter " data-level="1.2.4" data-path="user-dates.html">
             
-                <a href="../datetime/user-dates.html">
+                <a href="user-dates.html">
             
                     
                     user-significant dates
@@ -364,9 +364,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../docs/">
             
-                <a href="./">
+                <a href="../docs/">
             
                     
                     working on docs
@@ -378,9 +378,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="guidelines.html">
+        <li class="chapter " data-level="1.5.1" data-path="../docs/guidelines.html">
             
-                <a href="guidelines.html">
+                <a href="../docs/guidelines.html">
             
                     
                     docs guidelines
@@ -391,9 +391,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="workflow.html">
+        <li class="chapter " data-level="1.5.2" data-path="../docs/workflow.html">
             
-                <a href="workflow.html">
+                <a href="../docs/workflow.html">
             
                     
                     docs setup & workflow
@@ -439,7 +439,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >working on docs</a>
+        <a href=".." >falsehoods re: diabetes data datetimes</a>
     </h1>
 </div>
 
@@ -454,11 +454,19 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="docs-for-docs">docs for docs!</h2>
-<p>In this section, you can read about:</p>
+                                <h3 id="falsehoods-tidepoolers-want-to-believe-about-diabetes-device-times">Falsehoods Tidepoolers (want to) believe about diabetes device times</h3>
 <ul>
-<li><a href="guidelines.html">our guidelines for technical documentation</a></li>
-<li><a href="workflow.html">technical details of working on (GitBook) docs</a></li>
+<li>the <a href="../GLOSSARY.html#display-time" class="glossary-term" title="A display time is a type of relative datetime---that is, a datetime without timezone information and therefore not anchored to UTC.">display time</a> on a <a href="../GLOSSARY.html#pwd" class="glossary-term" title="&quot;Person with diabetes&quot; or at Tidepool, equivalently, &quot;Person with data.&quot;">PwD</a>&apos;s device will be accurate to their local time</li>
+<li>OK, maybe not, but it will be pretty close (within minutes)</li>
+<li>OK, maybe sometimes it will be an hour off because of a <a href="../GLOSSARY.html#dst" class="glossary-term" title="Daylight saving time (abbreviated DST) is the practice of advancing clock time by an hour during the summer months so that evening daylight lasts longer.">DST</a> changeover</li>
+<li>OK, maybe not, but the <a href="../GLOSSARY.html#pwd" class="glossary-term" title="&quot;Person with diabetes&quot; or at Tidepool, equivalently, &quot;Person with data.&quot;">PwD</a> will definitely remember to change the <a href="../GLOSSARY.html#display-time" class="glossary-term" title="A display time is a type of relative datetime---that is, a datetime without timezone information and therefore not anchored to UTC.">display time</a> before the <em>next</em> <a href="../GLOSSARY.html#dst" class="glossary-term" title="Daylight saving time (abbreviated DST) is the practice of advancing clock time by an hour during the summer months so that evening daylight lasts longer.">DST</a> changeover</li>
+<li>OK, maybe not, but the <a href="../GLOSSARY.html#display-time" class="glossary-term" title="A display time is a type of relative datetime---that is, a datetime without timezone information and therefore not anchored to UTC.">display time</a> on a <a href="../GLOSSARY.html#pwd" class="glossary-term" title="&quot;Person with diabetes&quot; or at Tidepool, equivalently, &quot;Person with data.&quot;">PwD</a>&apos;s device won&apos;t be a month off</li>
+<li>OK, maybe not, but it won&apos;t be a year off</li>
+<li>OK, maybe not, but it won&apos;t be a decade off<sup><a href="#fn_b" id="reffn_b">b</a></sup></li>
+<li>OK, maybe not, but it won&apos;t be in the future</li>
+<li>OK, maybe not, but it won&apos;t possibly ever be January 1st, 2007 or January 1st, 2008 if the <a href="../GLOSSARY.html#pwd" class="glossary-term" title="&quot;Person with diabetes&quot; or at Tidepool, equivalently, &quot;Person with data.&quot;">PwD</a> didn&apos;t get the device until 2015, <em>surely</em><sup><a href="#fn_c" id="reffn_c">c</a></sup></li>
+<li>no two (or more) events will share the <em>exact</em> same <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a></li>
+<li>if a stored time field on the events from a diabetes device <em>looks like</em> a <a href="../GLOSSARY.html#unix-time" class="glossary-term" title="Unix time is a particularly machine-friendly method for representing a datetime, defined as the number of seconds that have elapsed since midnight on January 1st, 1970.">Unix time</a>, it is a <a href="../GLOSSARY.html#unix-time" class="glossary-term" title="Unix time is a particularly machine-friendly method for representing a datetime, defined as the number of seconds that have elapsed since midnight on January 1st, 1970.">Unix time</a></li>
 </ul>
 
                                 
@@ -487,12 +495,12 @@
 
             
                 
-                <a href="../front-end/recipes.html" class="navigation navigation-prev " aria-label="Previous page: recipes & workflows">
+                <a href="diabetes-data.html" class="navigation navigation-prev " aria-label="Previous page: diabetes data datetimes">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="guidelines.html" class="navigation navigation-next " aria-label="Next page: docs guidelines">
+                <a href="now.html" class="navigation navigation-next " aria-label="Next page: now">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -503,7 +511,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"working on docs","level":"1.5","depth":1,"next":{"title":"docs guidelines","level":"1.5.1","depth":2,"path":"docs/guidelines.md","ref":"docs/guidelines.md","articles":[]},"previous":{"title":"recipes & workflows","level":"1.4.3","depth":2,"path":"front-end/recipes.md","ref":"front-end/recipes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["advanced-emoji"],"pluginsConfig":{"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/README.md","mtime":"2017-05-24T21:39:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-02T18:32:50.529Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"falsehoods re: diabetes data datetimes","level":"1.2.2","depth":2,"next":{"title":"now","level":"1.2.3","depth":2,"path":"datetime/now.md","ref":"datetime/now.md","articles":[]},"previous":{"title":"diabetes data datetimes","level":"1.2.1","depth":2,"path":"datetime/diabetes-data.md","ref":"datetime/diabetes-data.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["advanced-emoji"],"pluginsConfig":{"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"datetime/falsehoods.md","mtime":"2017-05-26T23:23:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-02T18:32:50.529Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

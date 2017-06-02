@@ -1,0 +1,580 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>diabetes data datetimes · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-advanced-emoji/emoji-website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="falsehoods.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    datetime guide
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="diabetes-data.html">
+            
+                <a href="diabetes-data.html">
+            
+                    
+                    diabetes data datetimes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="falsehoods.html">
+            
+                <a href="falsehoods.html">
+            
+                    
+                    falsehoods re: diabetes data datetimes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="now.html">
+            
+                <a href="now.html">
+            
+                    
+                    now
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="user-dates.html">
+            
+                <a href="user-dates.html">
+            
+                    
+                    user-significant dates
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../GitHub/">
+            
+                <a href="../GitHub/">
+            
+                    
+                    git and GitHub usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../front-end/">
+            
+                <a href="../front-end/">
+            
+                    
+                    front-end @ Tidepool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../front-end/react/">
+            
+                <a href="../front-end/react/">
+            
+                    
+                    React @ Tidepool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1.1" data-path="../front-end/react/recommended-reading.html">
+            
+                <a href="../front-end/react/recommended-reading.html">
+            
+                    
+                    recommended reading
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.2" data-path="../front-end/react/dependencies.html">
+            
+                <a href="../front-end/react/dependencies.html">
+            
+                    
+                    dependencies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.1.3" data-path="../front-end/react/testing.html">
+            
+                <a href="../front-end/react/testing.html">
+            
+                    
+                    testing strategies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../front-end/redux/">
+            
+                <a href="../front-end/redux/">
+            
+                    
+                    Redux @ Tidepool
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.2.1" data-path="../front-end/redux/dependencies.html">
+            
+                <a href="../front-end/redux/dependencies.html">
+            
+                    
+                    dependencies
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.2" data-path="../front-end/redux/custom-middlewares.html">
+            
+                <a href="../front-end/redux/custom-middlewares.html">
+            
+                    
+                    custom middlewares
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.3" data-path="../front-end/redux/directory-structure.html">
+            
+                <a href="../front-end/redux/directory-structure.html">
+            
+                    
+                    directory structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.4" data-path="../front-end/redux/actions.html">
+            
+                <a href="../front-end/redux/actions.html">
+            
+                    
+                    standard actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2.5" data-path="../front-end/redux/testing.html">
+            
+                <a href="../front-end/redux/testing.html">
+            
+                    
+                    testing strategies
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../front-end/recipes.html">
+            
+                <a href="../front-end/recipes.html">
+            
+                    
+                    recipes & workflows
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../docs/">
+            
+                <a href="../docs/">
+            
+                    
+                    working on docs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../docs/guidelines.html">
+            
+                <a href="../docs/guidelines.html">
+            
+                    
+                    docs guidelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../docs/workflow.html">
+            
+                <a href="../docs/workflow.html">
+            
+                    
+                    docs setup & workflow
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >diabetes data datetimes</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="handling-datetimes-in-diabetes-data">Handling datetimes in diabetes data</h2>
+<h4 id="table-of-contents">Table of contents</h4>
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#handling-diabetes-data-datetimes-on-ingestion">Handling diabetes data datetimes on ingestion</a></li>
+<li><a href="#handling-diabetes-data-datetimes-in-the-clients">Handling diabetes data datetimes in the client(s)</a></li>
+</ul>
+<h3 id="background">Background</h3>
+<p>The storage of datetimes on actual physical diabetes devices is, in short, &#x1F4A9;. If you can imagine a way to store datetimes badly<sup><a href="#fn_a" id="reffn_a">a</a></sup>, we&apos;ve probably seen it at Tidepool.</p>
+<p>To start, no diabetes device that we know of stores the datetimes of events that occur on the device in <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a> (the standard on &#x1F30E;) or in a fashion that is <em>anchored</em> to <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a>, with the possible exception of an iPhone serving as a receiver for a Dexcom G5 CGM (depending on how hair-splitty you want to get about the term &quot;diabetes device&quot;). Since <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a> is the &#x1F30D; standard and the only standard that allows for <em>aligning</em> data from multiple devices on the same timeline <em>reliably</em>, this presents a problem.</p>
+<p>At Tidepool, aligning data from multiple devices on the same timeline reliably is <strong>core</strong> to our product, so we have implemented an algorithm (known around these parts by the abbrevaition <a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a>) to infer the <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a> <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> from the relative datetimes stored on diabetes devices. This algorithm adds several properties to each datum in the Tidepool data model, and for the purposes of <em>this</em> document, it&apos;s not the hows of the calculation of these properties that is important, but rather what a few of them represent and can be used for:</p>
+<ul>
+<li><code>time</code> is the inferred, <a href="../GLOSSARY.html#iso-8601" class="glossary-term" title="ISO 8601 is the International Organization for Standardization&apos;s (ISO) standard covering the exchange of date- and time-related data.">ISO 8601</a>-formatted <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a> <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> of the event</li>
+<li><code>deviceTime</code> is an <a href="../GLOSSARY.html#iso-8601" class="glossary-term" title="ISO 8601 is the International Organization for Standardization&apos;s (ISO) standard covering the exchange of date- and time-related data.">ISO 8601</a>-formatted version of the original <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> stored on the diabetes device; that is, Tidepool only reformatted this value, but did not otherwise change it in any way</li>
+<li><code>timezoneOffset</code> is the inferred <a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a> offset for the event</li>
+</ul>
+<p><code>deviceTime</code> is a relative value to the user&apos;s local <a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a>, but prior to running <a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a>, none of the <a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a> information needed to anchor the <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> on the absolute scale of <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a> is available; rather, this information is hidden or latent. (@jebeck has a fondness for referring to such datetimes as &quot;<a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a>-na&#xEF;ve,&quot; though this is a perhaps a too liberal stretch of the meaning of &quot;na&#xEF;ve.&quot; &#x1F937;&#x200D;&#x2640;&#xFE0F;)</p>
+<p>The latent <a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a> offset value accompanying a <code>deviceTime</code> is what is inferred by the <a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a> algorithm and then used to calculate the <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a> <code>time</code> value. In other words, <code>time</code> is the result of taking a relative <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> in <code>deviceTime</code> and subtracting the inferred <code>timezoneOffset</code> in order to convert the <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> to the absolute <a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a> scale:</p>
+<pre><code>time = deviceTime - timezoneOffset
+</code></pre><p>For example, a <code>deviceTime</code> of midnight on January 1st, 2017 for a user uploading then with their device aligning with the <code>US/Pacific</code> <a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a> would result in an inferred <code>timezoneOffset</code> of <code>-480</code>, and therefore:</p>
+<pre><code>2017-01-01T08:00:00.000Z = 2017-01-01T00:00:00 - -480
+</code></pre><p>More precisely as a computer would perform this calculation, having parsed the first two String representations into integer hammertimes:</p>
+<pre><code>1483257600000 = 1483228800000 - -28800000
+</code></pre><p>This equation is true in the vast majority of cases, but there are slightly more complex edge cases as well, but those are not relevant outside of the <a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a> algorithm itself, so the interested or needful reader should <a href="http://developer.tidepool.io/chrome-uploader/docs/BootstrappingToUTC.html" title="Bootstrapping to UTC" target="_blank">refer to the BtUTC technical documentation</a> for further details.</p>
+<p>The <em>storage</em> protocols for datetimes on diabetes devices isn&apos;t even the only source of problems in handling them. The <a href="../GLOSSARY.html#pwd" class="glossary-term" title="&quot;Person with diabetes&quot; or at Tidepool, equivalently, &quot;Person with data.&quot;">PwD</a>&apos;s behavior in managing their devices&apos; <a href="../GLOSSARY.html#display-time" class="glossary-term" title="A display time is a type of relative datetime---that is, a datetime without timezone information and therefore not anchored to UTC.">display time</a> also causes complications. The user interfaces on many diabetes devices are not designed well, so aside from inattention, errors sometimes occur because they are <em>easier</em> to make in the interface than non-errors.</p>
+<p>In general, it is good to approach diabetes device times with a very, very small set of assumptions. In other words, avoid all of <a href="falsehoods.html" title="Falsehoods Tidepoolers (want to) believe about diabetes device times">this list of assumptions</a>, which have been proven false in one way or another (and often repeatedly) at Tidepool.</p>
+<h3 id="handling-diabetes-data-datetimes-on-ingestion">Handling diabetes data datetimes on ingestion</h3>
+<p>If the only thing an engineer implementing the protocol to read data from a diabetes device needed to know about handling datetimes properly was &quot;run the <a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a> algorithm,&quot; then there wouldn&apos;t be much of a need for this section. As the reader may have guessed already, <a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a> gets you most of the way there, but not all the way. There is at least one situation&#x2014;plus <a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a> edge cases and bugs&#x2014;that will still require the engineer working on data ingestion to manipulate diabetes device datetimes directly.</p>
+<h4 id="schedule-lookup">Schedule lookup</h4>
+<p>Basal schedules and other insulin pump settings are based on a schedule that is expressed in device local time. When a user changes their device&apos;s <a href="../GLOSSARY.html#display-time" class="glossary-term" title="A display time is a type of relative datetime---that is, a datetime without timezone information and therefore not anchored to UTC.">display time</a> setting, the schedule will follow the new <a href="../GLOSSARY.html#display-time" class="glossary-term" title="A display time is a type of relative datetime---that is, a datetime without timezone information and therefore not anchored to UTC.">display time</a> rather than shifting.</p>
+<p>The implications of this when ingesting device data are that in situations where the ingestion process needs to look up information from a currently active schedule in the currently active device settings, the ingestion engineer must translate the event&apos;s post-<a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a> <code>time</code> back to a <code>deviceTime</code> (i.e., a &quot;<a href="../GLOSSARY.html#display-time" class="glossary-term" title="A display time is a type of relative datetime---that is, a datetime without timezone information and therefore not anchored to UTC.">display time</a>&quot;) in order to look up which segment of the currently active schedule the event falls into. </p>
+<h3 id="handling-diabetes-data-datetimes-in-the-clients">Handling diabetes data datetimes in the client(s)</h3>
+<p>In the client, the guideline for handling diabetes data datetimes is quite simple: use the <code>time</code> field in the Tidepool data model, in combination with the user&apos;s configured <a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a> preferences.</p>
+<p>When using <a href="https://momentjs.com/" title="Moment.js" target="_blank">Moment.js</a> to manipulate and/or display diabetes device datetimes using the <code>time</code> field in the Tidepool data model, in every case your usage should begin with <code>moment.utc(time).tz(timezone)</code>. For good examples of this, refer to <a href="https://github.com/tidepool-org/viz/blob/master/src/utils/datetime.js" title="@tidepool/viz: datetime utilities" target="_blank">viz&apos;s datetime utilities</a>.</p>
+<hr>
+<blockquote id="fn_a">
+<sup>a</sup>. Not pathologically or maliciously badly. Just, you know, <em>poorly</em>.<a href="#reffn_a" title="Jump back to footnote [a] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_b">
+<sup>b</sup>. Just kidding! We haven&apos;t actually seen this one yet at Tidepool. But it&apos;s the <em>only one</em>. Yes. <em>Really.</em><a href="#reffn_b" title="Jump back to footnote [b] in the text."> &#x21A9;</a>
+</blockquote>
+<blockquote id="fn_c">
+<sup>c</sup>. These are the two most common &quot;default&quot; times that we&apos;ve seen on diabetes devices. These default times surface on events under various circumstances, the most common of which is a clock error due to extended lack of power to the device (dead battery or battery out too long).<a href="#reffn_c" title="Jump back to footnote [c] in the text."> &#x21A9;</a>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: datetime guide">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="falsehoods.html" class="navigation navigation-next " aria-label="Next page: falsehoods re: diabetes data datetimes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"diabetes data datetimes","level":"1.2.1","depth":2,"next":{"title":"falsehoods re: diabetes data datetimes","level":"1.2.2","depth":2,"path":"datetime/falsehoods.md","ref":"datetime/falsehoods.md","articles":[]},"previous":{"title":"datetime guide","level":"1.2","depth":1,"path":"datetime/README.md","ref":"datetime/README.md","articles":[{"title":"diabetes data datetimes","level":"1.2.1","depth":2,"path":"datetime/diabetes-data.md","ref":"datetime/diabetes-data.md","articles":[]},{"title":"falsehoods re: diabetes data datetimes","level":"1.2.2","depth":2,"path":"datetime/falsehoods.md","ref":"datetime/falsehoods.md","articles":[]},{"title":"now","level":"1.2.3","depth":2,"path":"datetime/now.md","ref":"datetime/now.md","articles":[]},{"title":"user-significant dates","level":"1.2.4","depth":2,"path":"datetime/user-dates.md","ref":"datetime/user-dates.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["advanced-emoji"],"pluginsConfig":{"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"datetime/diabetes-data.md","mtime":"2017-06-02T18:01:30.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-02T18:32:50.529Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>working on docs · GitBook</title>
+        <title>datetime guide · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="guidelines.html" />
+    <link rel="next" href="diabetes-data.html" />
     
     
-    <link rel="prev" href="../front-end/recipes.html" />
+    <link rel="prev" href="../" />
     
 
     </head>
@@ -106,9 +106,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2" data-path="../datetime/">
+        <li class="chapter active" data-level="1.2" data-path="./">
             
-                <a href="../datetime/">
+                <a href="./">
             
                     
                     datetime guide
@@ -120,9 +120,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="../datetime/diabetes-data.html">
+        <li class="chapter " data-level="1.2.1" data-path="diabetes-data.html">
             
-                <a href="../datetime/diabetes-data.html">
+                <a href="diabetes-data.html">
             
                     
                     diabetes data datetimes
@@ -133,9 +133,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2" data-path="../datetime/falsehoods.html">
+        <li class="chapter " data-level="1.2.2" data-path="falsehoods.html">
             
-                <a href="../datetime/falsehoods.html">
+                <a href="falsehoods.html">
             
                     
                     falsehoods re: diabetes data datetimes
@@ -146,9 +146,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="../datetime/now.html">
+        <li class="chapter " data-level="1.2.3" data-path="now.html">
             
-                <a href="../datetime/now.html">
+                <a href="now.html">
             
                     
                     now
@@ -159,9 +159,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="../datetime/user-dates.html">
+        <li class="chapter " data-level="1.2.4" data-path="user-dates.html">
             
-                <a href="../datetime/user-dates.html">
+                <a href="user-dates.html">
             
                     
                     user-significant dates
@@ -364,9 +364,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5" data-path="./">
+        <li class="chapter " data-level="1.5" data-path="../docs/">
             
-                <a href="./">
+                <a href="../docs/">
             
                     
                     working on docs
@@ -378,9 +378,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="guidelines.html">
+        <li class="chapter " data-level="1.5.1" data-path="../docs/guidelines.html">
             
-                <a href="guidelines.html">
+                <a href="../docs/guidelines.html">
             
                     
                     docs guidelines
@@ -391,9 +391,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="workflow.html">
+        <li class="chapter " data-level="1.5.2" data-path="../docs/workflow.html">
             
-                <a href="workflow.html">
+                <a href="../docs/workflow.html">
             
                     
                     docs setup & workflow
@@ -439,7 +439,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >working on docs</a>
+        <a href=".." >datetime guide</a>
     </h1>
 </div>
 
@@ -454,12 +454,40 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="docs-for-docs">docs for docs!</h2>
-<p>In this section, you can read about:</p>
+                                <h2 id="jebecks-guide-to-handling-datetimes-at-tidepool">@jebeck&apos;s guide to handling datetimes at Tidepool</h2>
+<p><strong>tl;dr</strong>: Handling datetimes in the modern world is hard. Like, <em>really freaking hard</em>. &#x1F613;</p>
+<p>What are some of the things that make it hard? A short list: <a href="../GLOSSARY.html#dst" class="glossary-term" title="Daylight saving time (abbreviated DST) is the practice of advancing clock time by an hour during the summer months so that evening daylight lasts longer.">DST</a>, frequent cross-<a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a> travel, and technology like smart phones and browsers operating in an always locale-aware manner. This is @jebeck&apos;s handy guide to the most common situations at Tidepool where you&apos;ll have to handle datetimes and the best strategies for doing so.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>We need to start with the same vocabulary, as some terms are similar but the differences between them can be <em>crucial</em>. Before continuing with this guide, review the following terms in the <a href="../GLOSSARY.html">glossary</a>:</p>
 <ul>
-<li><a href="guidelines.html">our guidelines for technical documentation</a></li>
-<li><a href="workflow.html">technical details of working on (GitBook) docs</a></li>
+<li><a href="../GLOSSARY.html#btutc" class="glossary-term" title="Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.">BtUTC</a></li>
+<li><a href="../GLOSSARY.html#calendar-date" class="glossary-term" title="An object involving only date information&#x2014;year, month, and day&#x2014;and referring to a date in the 365-day Gregorian calendar; represented best in ISO 8601 YYYY-MM-DD format.">calendar date</a></li>
+<li><a href="../GLOSSARY.html#clock-time" class="glossary-term" title="An object involving only time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and referring to a point within a standard twenty-four hour day.">clock time</a></li>
+<li><a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a></li>
+<li><a href="../GLOSSARY.html#dst" class="glossary-term" title="Daylight saving time (abbreviated DST) is the practice of advancing clock time by an hour during the summer months so that evening daylight lasts longer.">DST</a></li>
+<li><a href="../GLOSSARY.html#hammertime" class="glossary-term" title="A Unix time in milliseconds instead of seconds.">hammertime</a></li>
+<li><a href="../GLOSSARY.html#iso-8601" class="glossary-term" title="ISO 8601 is the International Organization for Standardization&apos;s (ISO) standard covering the exchange of date- and time-related data.">ISO 8601</a></li>
+<li><a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a></li>
+<li><a href="../GLOSSARY.html#timezone" class="glossary-term" title="A timezone&#x2014;sometimes referred to as a named timezone or timezoneName at Tidepool for clarity&#x2014;is a String value referring to a timezone from the IANA Time Zone Database.">timezone</a> offset</li>
+<li><a href="../GLOSSARY.html#unix-time" class="glossary-term" title="Unix time is a particularly machine-friendly method for representing a datetime, defined as the number of seconds that have elapsed since midnight on January 1st, 1970.">Unix time</a></li>
+<li><a href="../GLOSSARY.html#utc" class="glossary-term" title="Coordinated Universal Time (UTC) is the primary date &amp; time standard by which planet Earth regulates clocks and time.">UTC</a></li>
 </ul>
+<p>It is also essential for those handling datetimes on diabetes devices for <em>ingestion</em> into the Tidepool platform to review the <a href="falsehoods.html" title="Falsehoods Tidepoolers (want to) believe about diabetes device times">falsehoods Tidepoolers (want to) believe about diabetes device times</a>. (It is certainly advisable for those handling datetimes on diabetes data in the client(s) to review this list as well, but it isn&apos;t quite as essential.)</p>
+<p>In addition to these prerequisites, here are a few readings and videos that are also well worth study, though maybe not all at once:</p>
+<ul>
+<li><a href="http://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time" title="Falsehoods programmers believe about time" target="_blank">Falsehoods programmers believe about time</a><sup><a href="#fn_a" id="reffn_a">a</a></sup></li>
+</ul>
+<!--TODO: dig up that one video TS linked me to ages ago; perhaps he remembers it?-->
+<h3 id="the-guides">The guide(s)</h3>
+<p>The first key takeaway is that there is not <em>one</em> guide to datetimes at Tidepool. There are three: three distinct guides for three quite distinct situations. Or really, three distinct types of datetimes that are encountered regularly in the Tidepool codebase. So the first question a Tidepool engineer should ask themself is, &quot;What kind of <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> am I trying to manipulate?&quot; Then look at the appropriate guide below:</p>
+<ul>
+<li><a href="diabetes-data.html">guide to handling diabetes data</a>: This is the big one, naturally given Tidepool&apos;s mission. If you are dealing with a <code>time</code> or a <code>deviceTime</code> from a datum conforming to the Tidepool data model, this is the guide for you!</li>
+<li><a href="now.html">guide to handling browser-local datetimes in the present moment (i.e., <code>now</code>s)</a>: If you&apos;re trying to manipulate the <a href="../GLOSSARY.html#datetime" class="glossary-term" title="A &quot;datetime&quot; is our catchall term for an object involving both clock time information&#x2014;hours, minutes, seconds, and possibly milliseconds&#x2014;and date information&#x2014;year, month, and day.">datetime</a> representing a user&apos;s action in the present moment&#x2014;that is, a &quot;now&quot;&#x2014;then this is the guide you want.</li>
+<li><a href="user-dates.html">guide to handling user-significant calendar dates</a>: If you&apos;re working with any <a href="../GLOSSARY.html#calendar-date" class="glossary-term" title="An object involving only date information&#x2014;year, month, and day&#x2014;and referring to a date in the 365-day Gregorian calendar; represented best in ISO 8601 YYYY-MM-DD format.">calendar date</a> stored in the user&apos;s profile (as of May 2017, these are <code>birthday</code> and <code>diagnosisDate</code>), look at this guide.</li>
+</ul>
+<blockquote id="fn_a">
+<sup>a</sup>. Hat tip to @darinkrauss for linking this one in the Tidepool Slack!<a href="#reffn_a" title="Jump back to footnote [a] in the text."> &#x21A9;</a>
+</blockquote>
 
                                 
                                 </section>
@@ -487,12 +515,12 @@
 
             
                 
-                <a href="../front-end/recipes.html" class="navigation navigation-prev " aria-label="Previous page: recipes & workflows">
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="guidelines.html" class="navigation navigation-next " aria-label="Next page: docs guidelines">
+                <a href="diabetes-data.html" class="navigation navigation-next " aria-label="Next page: diabetes data datetimes">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -503,7 +531,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"working on docs","level":"1.5","depth":1,"next":{"title":"docs guidelines","level":"1.5.1","depth":2,"path":"docs/guidelines.md","ref":"docs/guidelines.md","articles":[]},"previous":{"title":"recipes & workflows","level":"1.4.3","depth":2,"path":"front-end/recipes.md","ref":"front-end/recipes.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["advanced-emoji"],"pluginsConfig":{"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"docs/README.md","mtime":"2017-05-24T21:39:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-02T18:32:50.529Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"datetime guide","level":"1.2","depth":1,"next":{"title":"diabetes data datetimes","level":"1.2.1","depth":2,"path":"datetime/diabetes-data.md","ref":"datetime/diabetes-data.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["advanced-emoji"],"pluginsConfig":{"advanced-emoji":{"embedEmojis":false},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"datetime/README.md","mtime":"2017-06-02T18:21:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-02T18:32:50.529Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,3 +1,6 @@
+.bookignore
+.gitignore
 LICENSE
 package.json
 update-gh-pages.sh
+yarn.lock

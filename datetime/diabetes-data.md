@@ -52,7 +52,7 @@ If the only thing an engineer implementing the protocol to read data from a diab
 
 Basal schedules and other insulin pump settings are based on a schedule that is expressed in device local time. When a user changes their device's display time setting, the schedule will follow the new display time rather than shifting.
 
-The implications of this when ingesting device data are that in situations where the ingestion process needs to look up information from a currently active schedule in the currently active device settings, the ingestion engineer must translate the event's post-BtUTC `time` back to a `deviceTime` (i.e., a "display time") in order to look up which segment of the currently active schedule the event falls into. 
+The implications of this when ingesting device data are that in situations where the ingestion process needs to look up information from a currently active schedule in the currently active device settings, the ingestion engineer must translate the event's post-BtUTC `time` back to a `deviceTime` (i.e., a "display time") in order to look up which segment of the currently active schedule the event falls into.
 
 ### Handling diabetes data datetimes in the client(s)
 
@@ -64,5 +64,3 @@ When using [Moment.js](https://momentjs.com/ 'Moment.js') to manipulate and/or d
 - - - - -
 
 [^a]: Not pathologically or maliciously badly. Just, you know, *poorly*.
-[^b]: Just kidding! We haven't actually seen this one yet at Tidepool. But it's the *only one*. Yes. *Really.*
-[^c]: These are the two most common "default" times that we've seen on diabetes devices. These default times surface on events under various circumstances, the most common of which is a clock error due to extended lack of power to the device (dead battery or battery out too long).

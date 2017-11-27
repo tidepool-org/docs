@@ -2,7 +2,7 @@
 
 We have made an effort to standardized our directory structure and naming of files across repositories where we have a redux implementation. This makes it far easier to switch between client apps and not get lost!
 
-In blip, the path to all the redux-related code is `app/redux/`; in the Chrome uploader it is `lib/redux/`. Within `redux/` the directory structure is as follows:
+In blip, the path to all the redux-related code is `app/redux/`; in the uploader it is `lib/redux/`. Within `redux/` the directory structure is as follows:
 
 - a folder `actions/` contains the files:
     + `async.js` for asynchronous and/or conditional action creators that depend on the `redux-thunk` middleware

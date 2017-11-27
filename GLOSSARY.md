@@ -4,7 +4,7 @@
 
 Bootstrapping to UTC (BtUTC) is the algorithm Tidepool uses to infer UTC datetimes from the relative datetimes stored on diabetes devices in combination with the timezone of the most recent data on the device and the set of display time settings changes on the device.
 
-The [technical documentation for BtUTC](http://developer.tidepool.io/chrome-uploader/docs/BootstrappingToUTC.html 'Bootstrapping to UTC') resides in the uploader's docs, and there is also [a less technical blog post](http://tidepool.org/all/its-a-matter-of-time/ 'It's a Matter of Time').
+The [technical documentation for BtUTC](http://developer.tidepool.org/uploader/docs/BootstrappingToUTC.html 'Bootstrapping to UTC') resides in the uploader's docs, and there is also [a less technical blog post](http://tidepool.org/all/its-a-matter-of-time/ 'It's a Matter of Time').
 
 - - - - -
 

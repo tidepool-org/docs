@@ -7,9 +7,9 @@
     - [React @ Tidepool](./react/README.md)
     - [Redux @ Tidepool](./redux/README.md)
 - [Developer guides](#developer-guides)
-    - [blip](http://developer.tidepool.io/blip/docs/StartHere.html 'Tidepool developer portal: Blip developer guide')
-    - [chrome-uploader](http://developer.tidepool.io/chrome-uploader/docs/StartHere.html 'Tidepool developer portal: uploader developer guide')
-    - [viz](http://developer.tidepool.io/viz/docs/StartHere.html 'Tidepool developer portal: @tidepool/viz developer guide')
+    - [blip](http://developer.tidepool.org/blip/docs/StartHere.html 'Tidepool developer portal: Blip developer guide')
+    - [uploader](http://developer.tidepool.org/uploader/docs/StartHere.html 'Tidepool developer portal: uploader developer guide')
+    - [viz](http://developer.tidepool.org/viz/docs/StartHere.html 'Tidepool developer portal: @tidepool/viz developer guide')
 - [Miscellaneous recipes](./recipes.md)
 
 <!-- TODO: add further links to individual developer guides -->
@@ -18,10 +18,10 @@
 
 ### Repositories and published packages
 
-Tidepool has several repositories containing client-side JavaScript code in support of two client applications on the Tidepool platform, [blip](https://blip.tidepool.org/ 'Blip') and the [Tidepool uploader](https://chrome.google.com/webstore/detail/tidepool-uploader/cabklgajffclbljkhmjphejemhpbghfb 'Chrome web store: Tidepool uploader'). The GitHub repositories containing the code for these two applications are:
+Tidepool has several repositories containing client-side JavaScript code in support of two client applications on the Tidepool platform, [blip](https://blip.tidepool.org/ 'Blip') and the [Tidepool uploader](https://tidepool.org/products/tidepool-uploader/). The GitHub repositories containing the code for these two applications are:
 
 - [blip](https://github.com/tidepool-org/blip 'GitHub: blip')
-- [chrome-uploader](https://github.com/tidepool-org/chrome-uploader 'GitHub: chrome-uploader')
+- [uploader](https://github.com/tidepool-org/uploader 'GitHub: uploader')
 - [tideline](https://github.com/tidepool-org/tideline 'GitHub: tideline'): data visualization code (in the process of being deprecated)
 - [viz](https://github.com/tidepool-org/viz 'GitHub: viz'): data visualization code (an incremental rewrite of tideline that is currently in progress)
 - [platform-client](https://github.com/tidepool-org/platform-client 'GitHub: platform-client'): Tidepool platform API utilities (to be deprecated eventually, but replacement efforts not yet started)
@@ -47,6 +47,6 @@ Our client applications at Tidepool are single-page applications using [React](h
 
 For each Tidepool client application and currently active dependent repository, please see the appropriate developer guide for more information about each project's architecture, usage of dependencies, etc.:
 
-- [blip developer guide](http://developer.tidepool.io/blip/docs/StartHere.html 'Tidepool developer portal: Blip developer guide')
-- [Tidepool uploader developer guide](http://developer.tidepool.io/chrome-uploader/docs/StartHere.html 'Tidepool developer portal: uploader developer guide')
-- [@tidepool/viz developer guide](http://developer.tidepool.io/viz/docs/StartHere.html 'Tidepool developer portal: @tidepool/viz developer guide')
+- [blip developer guide](http://developer.tidepool.org/blip/docs/StartHere.html 'Tidepool developer portal: Blip developer guide')
+- [Tidepool uploader developer guide](http://developer.tidepool.org/uploader/docs/StartHere.html 'Tidepool developer portal: uploader developer guide')
+- [@tidepool/viz developer guide](http://developer.tidepool.org/viz/docs/StartHere.html 'Tidepool developer portal: @tidepool/viz developer guide')

@@ -19,7 +19,7 @@ We're building a *platform* at Tidepool, and while in the past we had some solut
 
 ### A: Running the platform locally with runservers but blip with hot module replacement (HMR) via webpack
 
-1. Start up the platform locally using runservers (cf. [starting services](http://developer.tidepool.io/starting-up-services/ 'Tidepool Developer Portal: Starting Services'))
+1. Start up the platform locally using runservers (cf. [starting services](http://developer.tidepool.org/starting-up-services/ 'Tidepool Developer Portal: Starting Services'))
 1. Kill the blip process runservers that spun up with `kill $TP_blip`
 1. In a fresh terminal tab or window, navigate to your local clone of blip and source the local config with `source config/local.sh`
 1. Now start up blip with HMR using `npm start`
@@ -27,7 +27,7 @@ We're building a *platform* at Tidepool, and while in the past we had some solut
 
 ### B: Changing the `MINIMUM_UPLOADER_VERSION` in jellyfish locally
 
-In the Chrome uploader, we check - both on launch of the app and at the start of any upload attempt - whether the user's uploader is at or above the `MINIMUM_UPLOADER_VERSION` configured in the [jellyfish](https://github.com/tidepool-org/jellyfish 'Tidepool on GitHub: jellyfish') data ingestion service. In order to work on the UI for the error displayed to a user when their uploader is out-of-date, you need to be able to change the `MINIMUM_UPLOADER_VERSION` jellyfish has configured, preferably without killing and restarting the entire runservers bundle of processes each time you make a change to the configuration! Here's how to do that:
+In the Tidepool Uploader, we check - both on launch of the app and at the start of any upload attempt - whether the user's uploader is at or above the `MINIMUM_UPLOADER_VERSION` configured in the [jellyfish](https://github.com/tidepool-org/jellyfish 'Tidepool on GitHub: jellyfish') data ingestion service. In order to work on the UI for the error displayed to a user when their uploader is out-of-date, you need to be able to change the `MINIMUM_UPLOADER_VERSION` jellyfish has configured, preferably without killing and restarting the entire runservers bundle of processes each time you make a change to the configuration! Here's how to do that:
 
 1. Start up the platform locally using runservers
 1. When you want to change the `MINIMUM_UPLOADER_VERSION`, open up the runservers file from your local copy of the [tools](https://github.com/tidepool-org/tools 'Tidepool on GitHub: tools') and comment out **all** the function *calls* starting with `tp_warmup` then `tp_mongo` etc. at the bottom of the file
@@ -140,7 +140,7 @@ for (var i = 0; i < ourDbs.length; ++i) {
 }
 ```
 
-[^1]: Blip and the Chrome uploader both had a "mock" mode using a mock version of the API (wrapper) that returned mock data via the [blip-mock-data](https://github.com/tidepool-org/blip-mock-data 'Tidepool on GitHub: blip-mock-data') repo and package published to npm. Due to recent and upcoming changes to the Tidepool platform API(s), we have deprecated this mock data repository and removed the mock mode option from both blip and the Chrome uploader.
+[^1]: Blip and the Uploader both had a "mock" mode using a mock version of the API (wrapper) that returned mock data via the [blip-mock-data](https://github.com/tidepool-org/blip-mock-data 'Tidepool on GitHub: blip-mock-data') repo and package published to npm. Due to recent and upcoming changes to the Tidepool platform API(s), we have deprecated this mock data repository and removed the mock mode option from both blip and the uploader.
 
 [^2]: Obligatory "TP restart" GIF (kudos belong to @darinkrauss for bidirectionalizing the original): ![the `tp_restart` kitty](../images/tp_restart-kitty.gif)
 

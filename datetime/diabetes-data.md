@@ -38,7 +38,7 @@ More precisely as a computer would perform this calculation, having parsed the f
 1483257600000 = 1483228800000 - -28800000
 ```
 
-This equation is true in the vast majority of cases, but there are slightly more complex edge cases as well, but those are not relevant outside of the BtUTC algorithm itself, so the interested or needful reader should [refer to the BtUTC technical documentation](http://developer.tidepool.io/chrome-uploader/docs/BootstrappingToUTC.html 'Bootstrapping to UTC') for further details.
+This equation is true in the vast majority of cases, but there are slightly more complex edge cases as well, but those are not relevant outside of the BtUTC algorithm itself, so the interested or needful reader should [refer to the BtUTC technical documentation](http://developer.tidepool.org/uploader/docs/BootstrappingToUTC.html 'Bootstrapping to UTC') for further details.
 
 The *storage* protocols for datetimes on diabetes devices isn't even the only source of problems in handling them. The PwD's behavior in managing their devices' display time also causes complications. The user interfaces on many diabetes devices are not designed well, so aside from inattention, errors sometimes occur because they are *easier* to make in the interface than non-errors.
 

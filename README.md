@@ -10,8 +10,8 @@ For instructions on how to serve these docs to yourself as a webpage locally, se
 
 Here in the docs repository:
 - [the glossary](./GLOSSARY.md)
+- [general docs](./general/README.md)
 - [@jebeck's guide to handling datetimes at Tidepool](./datetime/README.md)
-- [git & GitHub usage](./GitHub/README.md)
 - [front-end @ Tidepool](./front-end/README.md)
 - [working on docs](./docs/README.md)
 

@@ -10,16 +10,16 @@ You should repeat this process for any additional sub-dependencies that a servic
 
 1. Are there reasonable alternatives? Including in-house? (build vs. buy/license)
 2. Review the SLA
-  1. What is their uptime promise?
-  2. What is their escalation process?
-  3. Is it supported 24/7 globally?
-  4. Do they have an uptime dashboard?
-  5. What is their EOL policy for legacy APIs?
+    1. What is their uptime promise?
+    2. What is their escalation process?
+    3. Is it supported 24/7 globally?
+    4. Do they have an uptime dashboard?
+    5. What is their EOL policy for legacy APIs?
 3. Is the API available in all the geographies we need?
-  1. Is the performance adequate from other geographies?
-  2. What is their DR plan?
-  3. Do they have automatic failover to another geography?
-  4. If the service stores data persistently, is it subject to [GDPR] and similar laws?
+    1. Is the performance adequate from other geographies?
+    2. What is their DR plan?
+    3. Do they have automatic failover to another geography?
+    4. If the service stores data persistently, is it subject to [GDPR] and similar laws?
 4. How will it affect us if the service suffers a prolonged downtime? This could be outside of their control ([AWS us-east-1 outage](https://www.geekwire.com/2018/widespread-outage-amazon-web-services-u-s-east-region-takes-alexa-atlassian-developer-tools/))
 5. Is the API available for different development environments? (dev, stg, prod, …). Are they wholly separate or mixed (e.g. user/account IDs)? Are the non-production environments sufficiently representative of performance etc. of the production environment. Do you have a clear understanding of how they differ?
 6. Is the API rate limited? Does that rate meet our current and forecast needs?

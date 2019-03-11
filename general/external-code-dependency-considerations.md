@@ -35,6 +35,7 @@ You should repeat this process for any additional sub-dependencies that a depend
         1. Run the tests. Do the tests pass?
         2. Are they executed automatically on each PR/commit?
     6. What update strategy does the dependency use for backwards compatibility? Is anything documented? If not, review the change log or actual code changes between previous versions.
+    7. Does it come with build instructions so someone else can build this from scratch, if needed?
 9. How will we "lock" a particular reviewed version of the dependency (and any sub-dependencies) to ensure we get an exact reproducible build (even years later)? Can/should the dependencies be vendored?
 10. Consider the impact of the dependency to our [HIPAA] compliance requirements
 

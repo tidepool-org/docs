@@ -117,7 +117,7 @@ For example:
 
 ### Merge Feature Branch into Develop Branch
 
-Once the pull request is approved, merge the feature branch into the `develop` branch when the feature is about to be released.
+Once the pull request is approved, the finished feature branch may be merged into the `develop` branch to definitely add it to the upcoming release.
 
 If the `develop` branch has changed since you last merged then follow Merge Latest Develop Branch into Feature Branch, Push Feature Branch, and Peer Review Feature Branch instructions again. (The reviewer does not need to complete a full review, but does need to review and approve the final merged code for any issues with possible merge conflicts. This is enforced by the required GitHub branch protection settings.)
 

@@ -1,6 +1,6 @@
 # General
 
-This is our repository at Tidepool for general developer/technical documentation that doesn't belong in a specific app/library/service repo.
+This is our repository at Tidepool for general developer/technical documentation that does not belong in a specific app/library/service repo.
 
 #### Table of contents
 

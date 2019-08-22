@@ -8,7 +8,7 @@ In order to consistently ensure high quality code, a peer review of all code cha
 2. Is the feature branch up-to-date with the `develop` branch?
 3. Does the continuous integration build (e.g. Travis, CircleCI) pass? Do any of the non-required continuous integration steps fail? If so, why? Can these be fixed? If not, why not?
 4. If any external dependencies were added:
-    1. Review the results of the [Tidepool External Dependency Considerations](https://github.com/tidepool-org/docs/blob/master/general/external-code-dependency-considerations.md) for each new dependency and sub-dependency.
+    1. Review the results of the [Tidepool External Dependency Considerations] for each new dependency and sub-dependency.
     2. Do all of the new dependencies and sub-dependencies use an acceptable license?
     3. Are the new dependencies and sub-dependencies properly versioned and/or vendored to allow for future repeatable builds?
 5. If any external dependencies were updated:
@@ -121,7 +121,7 @@ If you really want to go crazy with a peer review, check out the [OWASP Code Rev
 
 Great read on how to keep PR reviews supportive and constructive for both the reviewer and reviewee: [Unlearning toxic behaviors in a code review culture](https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c).
 
-[Tidepool External Dependency Considerations]: ExternalDependencyConsiderations.md
+[Tidepool External Dependency Considerations]: external-code-dependency-considerations.md
 [PII]: https://en.wikipedia.org/wiki/Personally_identifiable_information
 [PHI]: https://en.wikipedia.org/wiki/Protected_health_information
 [OWASP Code Review Guide]: https://www.owasp.org/images/2/2e/OWASP_Code_Review_Guide-V1_1.pdf

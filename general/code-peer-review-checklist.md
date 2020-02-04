@@ -2,9 +2,11 @@
 
 In order to consistently ensure high quality code, a peer review of all code changes is required. It is recommended that the developer actually perform a code review of their own code **before** submitting it for peer review. This will hopefully reduce the amount of time and effort spent by the reviewer by catching common issues beforehand.
 
+This document is intended as guidance for engineers. It is not a Standard Operating Procedure (SOP).
+
 ## Common Checklist
 
-1. Does the code complete the feature requirements? Does it match the Trello card?
+1. Does the code complete the feature requirements? Does it match the Jira issue?
 2. Is the feature branch up-to-date with the `develop` branch?
 3. Does the continuous integration build (e.g. Travis, CircleCI) pass? Do any of the non-required continuous integration steps fail? If so, why? Can these be fixed? If not, why not?
 4. If any external dependencies were added:
@@ -61,7 +63,7 @@ In order to consistently ensure high quality code, a peer review of all code cha
 10. Was any technical debt added?
     1. If so, why? It should be a really, really good reason why it was not addressed
     2. It should be clearly documented where the tech debt was added.
-    3. A new Trello card should be created detailing the tech debt and specifically what it will take to remove that debt.
+    3. A new Jira issue should be created detailing the tech debt and specifically what it will take to remove that debt.
 11. Are there any `TODO`, `FIXME` or similar comments? If so, why? `TODO` is just a form of tech debt, so see above.
 12. Was the Pull Request focused? It is best if the Pull Request is focused to one new feature to make it easier to review.
 13. How many commits are involved in the Pull Request? If there is just one commit for a large number of unrelated changes this may point to lack of focus for the Pull Request. If there are a large number of commits, seriously consider rebasing down to a reasonable number. Strive for one commit per logical unit of work, but a feature may include multiple logical units of work. A logical unit of work is the smallest amount of work that can be completed and still have a functional project.

@@ -36,7 +36,7 @@ $ git checkout -b add-tiny-widget develop
 
 ### Develop Feature
 
-Develop the new feature. Add unit tests to fully test the new feature. Ensure *all* tests pass. Manually test the feature, as necessary. Ensure the new feature matches all done criteria from the related Trello card. Perform the [Tidepool Code Peer Review Checklist] process on the completed code to ensure everything it as it should be.
+Develop the new feature. Add unit tests to fully test the new feature. Ensure *all* tests pass. Manually test the feature, as necessary. Ensure the new feature matches all done criteria from the related Jira issue. Perform the [Tidepool Code Peer Review Checklist] process on the completed code to ensure everything it as it should be.
 
 Use standard git operations to add files, remove files, and create commits. Commit the feature code into one or more commits. Each commit should preferably be a single completed unit of work so that, if pushed to `origin` independently, the Continuous Integration system would build successfully and all tests would pass. Each commit title and description should accurately and completely describe, at a high-level, the changes contained within the commit.
 
@@ -99,7 +99,7 @@ Note the pull request reviewer is set to `pazaan` in the upper right corner.
 
 Click `Create pull request`. You may wish to notify the reviewer of the pull request via Slack.
 
-Add the pull request to the Trello card via the GitHub Power-Up.
+Add the pull request to the Jira issue by using a [Smart Commit](https://support.atlassian.com/jira-software-cloud/docs/process-issues-with-smart-commits/) tag. Jira will automatically pick it up.
 
 If you are a requested reviewer, but you will not be able to perform the review in a timely manner, please reach out to the requestor and explain the situation. The requestor may be fine waiting or may decide to choose another reviewer.
 

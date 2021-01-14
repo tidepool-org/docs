@@ -123,7 +123,7 @@ If you really want to go crazy with a peer review, check out the [OWASP Code Rev
 
 Great read on how to keep PR reviews supportive and constructive for both the reviewer and reviewee: [Unlearning toxic behaviors in a code review culture](https://medium.freecodecamp.org/unlearning-toxic-behaviors-in-a-code-review-culture-b7c295452a3c).
 
-[Tidepool External Dependency Considerations]: ExternalDependencyConsiderations.md
+[Tidepool External Dependency Considerations]: external-code-dependency-considerations.md
 [PII]: https://en.wikipedia.org/wiki/Personally_identifiable_information
 [PHI]: https://en.wikipedia.org/wiki/Protected_health_information
 [OWASP Code Review Guide]: https://www.owasp.org/images/2/2e/OWASP_Code_Review_Guide-V1_1.pdf
